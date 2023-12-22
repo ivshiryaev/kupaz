@@ -1,0 +1,206 @@
+[
+	{
+		"id": 0,
+		"title": "Blood mary",
+		"smak": "Gorzki",
+		"skladniki": [
+			"Pomidor wysuszony",
+			"Pieprz",
+			"Seler",
+			"Cedra cytryny",
+			"Pieprz chili"
+		],
+		"description": "Zestaw do nalewki o smaku Blood Mary - pikantny i wyrazisty z połączenia naturalnych składników, takich jak pomidory, papryczki chili i aromatyczne przyprawy. Idealny na imprezy i chwile relaksu z przyjaciółmi.",
+		"price": 5500
+	},
+	{
+		"id": 1,
+		"title": "Czekoladowa delicja",
+		"smak": "Słodki",
+		"skladniki": [
+			"Naturalny cukier waniliowy",
+			"Skórki z cytryny",
+			"Skórka pomarańczy",
+			"Cukier karmelowy",
+			"Pokruszony cynamon",
+			"Kakao"
+		],
+		"description": "Zestaw do nalewki o smaku Czekoladowa delicja - intensywna czekoladowa przyjemność, idealna jako deserowy trunek na wieczorne relaksujące chwile.",
+		"price": 5500
+	},
+	{
+		"id": 2,
+		"title": "Irish",
+		"smak": "Kawowy",
+		"skladniki": [
+			"Kawa ziarnista",
+			"Pokruszony cynamon",
+			"Cukier waniliowy",
+			"Wanilina",
+			"Naturalny cukier karmelowy"
+		],
+		"description": "Zestaw do nalewki Irish - mieszanka kawy ziarnistej, cynamonu, cukru waniliowego i naturalnego cukru karmelowego. Wyjątkowy smak, który przeniesie Cię do Irlandii.",
+		"price": 5500
+	},
+	{
+		"id": 3,
+		"title": "Jałowiec",
+		"smak": "Gorzki",
+		"skladniki": [
+			"Jagoda jałowca",
+			"Cedra pomarańczy",
+			"Orzechy włoskie",
+			"Cukier waniliowy",
+			"Kwas cytrynowy"
+		],
+		"description": "Odkryj wyjątkowy zestaw do nalewki o smaku Jałowiec - połączenie jagód jałowca, cedry pomarańczy, orzechów włoskich, cukru waniliowego i kwasu cytrynowego. Pełny harmonii i naturalnych aromatów, gotowa nalewka będzie idealna na specjalne okazje i wieczory z przyjaciółmi.",
+		"price": 5500
+	},
+	{
+		"id": 4,
+		"title": "Karaibskie mojito",
+		"smak": "Miętowy",
+		"skladniki": [
+			"Cedra cytryny",
+			"Cedra pomarańczy",
+			"Naturalny cukier",
+			"Mięta",
+			"Melisa",
+			"Gozdzik"
+		],
+		"description": "Zestaw do nalewki Karaibskie mojito to orzeźwiający smak z cedry cytryny i pomarańczy, z nutą mięty, melisy i goździków. Gotowa nalewka będzie doskonała na gorące dni i wyjątkowe chwile z przyjaciółmi.",
+		"price": 5500
+	},
+	{
+		"id": 5,
+		"title": "Kremowe malibu",
+		"smak":"Słodki",
+		"skladniki": [
+			"Kawa ziarnista",
+			"Śmietanka w proszku",
+			"Cukier karmelowy",
+			"Kardamon",
+			"Kokos wysuszony"
+		],
+		"description": "Zestaw do nalewki \"Kremowe Malibu\" to prawdziwa rozkosz dla podniebienia. Wyjątkowa mieszanka naturalnych składników sprawia, że ten trunek ma kremową i egzotyczną nutę, która zachwyci Twoje zmysły.",
+		"price": 5500
+	},
+	{
+		"id": 6,
+		"title": "Kwiaty róży",
+		"smak":"Kwaśny",
+		"skladniki": [
+			"Kwiaty róży",
+			"Hibiskus",
+			"Kwas cytrynowy"
+		],
+		"description": "Zestaw do nalewki \"Kwiaty róży\" to delikatny eliksir złożony z najwyższej jakości składników. Kwiaty róży nadają tej nalewce wyjątkowy i romantyczny charakter, idealny na wyjątkowe okazje.",
+		"price": 5500
+	},
+	{
+		"id": 7,
+		"title": "Lawendowy prowans",
+		"smak":"Gorzki",
+		"skladniki": [
+			"Kwiat lawendy",
+			"Naturalny cukier waniliowy",
+			"Cedra cytrtny",
+			"Cedra pomarańczy"
+		],
+		"description": "\"Lawendowy prowans\" to wyjątkowy zestaw do nalewki, która przenosi Cię prosto do słonecznej Prowansji. Ekskluzywna kompozycja kwiatu lawendy, naturalnego cukru waniliowego i cytrusowych nut cedry cytrynowej i cedry pomarańczy tworzy niepowtarzalny bukiet smakowy.",
+		"price": 5500
+	},
+	{
+		"id": 8,
+		"title": "Lemon drop",
+		"smak":"Słodki",
+		"skladniki": [
+			"Cedra cytryny",
+			"Cynamon",
+			"Cukier karmelowy",
+			"Cukier waniliowy"
+		],
+		"description": "Witaj w świecie \"Lemon Drop\" - wyjątkowy zestaw do nalewki, która przyniesie Ci orzeźwiający smak i zapach świeżych cytryn. Nasza nalewka, zdominowana przez cedrę cytryny, zaskoczy Cię intensywnością i radością, jaką dostarcza każdy łyk.",
+		"price": 5500
+	},
+	{
+		"id": 9,
+		"title": "Piernikowa historia",
+		"smak":"Słodki",
+		"skladniki": [
+			"Zmiażdżony imbir",
+			"Cukier waniliowy",
+			"Pokruszony cynamon",
+			"Naturalny cukier karmelowy"
+		],
+		"description": "Zestaw do nalewki o smaku \"Piernikowa historia\" to wyjątkowa kompozycja naturalnych składników, które przywołują wspomnienia ciepłych i aromatycznych pierników. Zainspirowana tradycyjnymi przyprawami używanymi w piernikach, ta nalewka zachwyci Twoje zmysły swoim wyjątkowym smakiem i aromatem.",
+		"price": 5500
+	},
+	{
+		"id": 10,
+		"title": "Słony karmel",
+		"smak":"Słodki",
+		"skladniki": [
+			"Karmel wysuszony",
+			"Sól morska",
+			"Naturalny cukier karmelowy"
+		],
+		"description": "Zestaw do nalewki \"Słony karmel\" to wyjątkowy trunek, który łączy słodką nutę karmelu z delikatną nutą soli morskiej, tworząc niepowtarzalny smak, który doskonale podkreśli Twoje podniebienie. Zestawienie naturalnych składników nadaje tej nalewce charakterystyczny i bogaty aromat.",
+		"price": 5500
+	},
+	{
+		"id": 11,
+		"title": "Starka",
+		"smak":"Gorzki",
+		"skladniki": [
+			"Skórki z cytryny",
+			"Kora dębu",
+			"Ziarna kawy",
+			"Wanilina",
+			"Gałka muszkatołowa"
+		],
+		"description": "\"Starka\" to wyjątkowy zestaw do nalewki o intensywnym i złożonym smaku, która zachwyci miłośników głębokich aromatów i elegancji. Nazwa \"Starka\" nawiązuje do tradycyjnego trunku, który dojrzewa przez długie lata, a nasza nalewka została stworzona, aby naśladować te wyjątkowe cechy.",
+		"price": 5500
+	},
+	{
+		"id": 12,
+		"title": "Truskawkowy daiquiri",
+		"smak":"Gorzki",
+		"skladniki": [
+			"Truskawka wysuszona",
+			"Anyż gwiazdkowaty",
+			"Pokruszony cynamon",
+			"Skórka pomarańczy",
+			"Cukier naturalny"
+		],
+		"description": "\"Truskawkowy daiquiri\" to wyjątkowy zestaw do nalewki, która przeniesie Cię w aromatyczny świat soczystych truskawek i egzotycznego daiquiri. Wykonana z naturalnych składników, ta kompozycja przyniesie Ci niezapomniany smak i orzeźwienie.",
+		"price": 5500
+	},
+	{
+		"id": 13,
+		"title": "Zimowa wiśnia",
+		"smak":"Miętowy",
+		"skladniki": [
+			"Wiśnia wysuszona",
+			"Kwas cytrynowy",
+			"Cukier waniliowy",
+			"Mięta"
+		],
+		"description": "\"Zimowa wiśnia\" to niezwykły zestaw do nalewki, która przeniesie Cię w magiczny świat zimowych smaków i aromatów. Skomponowana z naturalnych składników, ta wyjątkowa mieszanka przyniesie Ci oryginalny smak wiśni w połączeniu z nutami świeżości mięty.",
+		"price": 5500
+	},
+	{
+		"id": 15,
+		"title": "Żurawinowa",
+		"smak":"Kwaśny",
+		"skladniki": [
+			"Żurawina wysuszona",
+			"Cedra cytryny",
+			"Cedra pomarańczy",
+			"Cukier naturalny",
+			"Cynamon cejloński"
+		],
+		"description": "\"Żurawinowa\" to niezwykły zestaw do nalewki, która przeniesie Cię w aromatyczny świat soczystych żurawin i cytrusów. Zestawienie naturalnych składników sprawia, że ten trunek wyróżnia się wyjątkowym smakiem i bogatym aromatem.",
+		"price": 5500
+	}
+]

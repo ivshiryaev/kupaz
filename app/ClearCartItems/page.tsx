@@ -10,7 +10,9 @@ function ClearCartItems() {
 	const { clearItems } = useShoppingCart()
 
 	clearItems()
-	localStorage.removeItem('cartItems')
+	if(typeof window !== 'undefined'){
+		localStorage.removeItem('cartItems')
+	}
 
 	redirect('/')
 

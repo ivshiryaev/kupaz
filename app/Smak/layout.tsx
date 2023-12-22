@@ -1,7 +1,7 @@
 import React from 'react'
 
-import HowTo from '@/components/sections/HowTo'
-import FAQ from '@/components/sections/FAQ'
+import HowTo from '@/components/Sections/HowTo'
+import FAQ from '@/components/Sections/FAQ'
 
 function SmakLayout({ children } : { children: React.ReactNode }) {
 	return (

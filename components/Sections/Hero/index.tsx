@@ -57,9 +57,9 @@ function Hero() {
 					rounded-2xl bg-white
 					p-8
 				'>
-					<p className='text-[2rem] lg:hidden'>Zestawy do tworzenia własnych nalewek</p>
+					<p className='text-center'>Zestawy do tworzenia własnych nalewek</p>
 					<Link href='/Oferta' className='w-full'>
-						<Button appearance='fill' className='w-full'>Chcę kupić</Button>
+						<Button appearance='fill' className='w-full'>Zobacz nasze smaki</Button>
 					</Link>
 				</div>
 			</div>

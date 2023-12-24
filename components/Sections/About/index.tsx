@@ -27,7 +27,7 @@ function About() {
 				relative
 				overflow-hidden
 				w-full lg:w-[350px]
-				h-[450px]
+				h-[500px]
 			'>
 				<Swiper/>
 			</div>

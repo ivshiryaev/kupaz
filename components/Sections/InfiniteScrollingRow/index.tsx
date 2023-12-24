@@ -9,7 +9,7 @@ import { GoGift } from "react-icons/go"
 
 function index() {
 	return (
-		<section className='overflow-hidden rounded-2xl'>
+		<section className='hidden lg:block overflow-hidden rounded-2xl'>
 			<motion.div 
 				className='flex w-max'
 				initial={{

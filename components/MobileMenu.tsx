@@ -14,13 +14,15 @@ function MobileMenu() {
 	const pathname = usePathname()
 	const [isOpen, setIsOpen] = React.useState(false)
 
-	React.useEffect(() => {
+	React.useEffect(()=>{
 		if(isOpen){
 			document.body.classList.add('overflow-hidden')
+			document.body.classList.add('lg:overflow-auto')
 		} else {
 			document.body.classList.remove('overflow-hidden')
+			document.body.classList.remove('lg:overflow-auto')
 		}
-	}, [isOpen])
+	},[isOpen])
 
 	function handleLinkClick(){
 		setIsOpen(false)

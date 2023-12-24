@@ -12,16 +12,16 @@ import InfiniteScrollingRow from '@/components/Sections/InfiniteScrollingRow'
 export default function Home() {
     return (
         <>
-            <Promotions/>
             <Hero/>
             <MobileHero/>
-            <InfiniteScrollingRow/>
-            <Bestsellers/>
             <About/>
+            <Promotions/>
+            <Bestsellers/>
             <FAQ/>
-            <MobileSwiperSection/>
-            <HowTo/>
+            {/*<MobileSwiperSection/>*/}
+            {/*<HowTo/>*/}
             <Contact/>
+            <InfiniteScrollingRow/>
         </>
     )
 }

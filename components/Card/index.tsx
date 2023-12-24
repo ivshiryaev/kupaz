@@ -39,7 +39,7 @@ async function Card({id} : {id: number}) {
 	return (
 			<article className='relative'>
 				<Link
-					href={`/Smak/${title}`}
+					href={`/Oferta/${id}`}
 					className='
 						flex items-center
 						bg-white
@@ -83,7 +83,7 @@ async function Card({id} : {id: number}) {
 						</div>
 						{/*Array of components*/}
 						<div className='hidden lg:flex'>
-							<ListOfComponents items={skladniki} smallText/>
+							<ListOfComponents limit={3} items={skladniki} smallText/>
 						</div>
 					</div>
 					{/*Discount*/}

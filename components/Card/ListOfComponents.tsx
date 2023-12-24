@@ -36,7 +36,29 @@ function getRandomColor(): string {
 	return colors[randomIndex];
 }
 
-function ListOfComponents({items, smallText} : {items: string[], smallText?: boolean}) {
+function ListOfComponents({items, smallText, limit} : {items: string[], smallText?: boolean, limit?: number}) {
+	//Example: we have items.length == 5, limit == 3
+	// Limited array will == 3 , and last element which says (2 more)
+
+	//Items.length == 5 limit == 5
+	// Limited array will == 5
+
+	//Items. length = 2 limit ==3
+	// Limited array == 2
+
+	if(limit){
+		const initialItems = items
+
+		items = initialItems.slice(0, limit)
+
+		if(initialItems.length > limit){
+			const difference = initialItems.length - limit
+			items.push(`${difference} więcej...`)
+		}
+	}
+
+	
+
 	return (
 		<motion.ul
 			viewport={{ once: true }}

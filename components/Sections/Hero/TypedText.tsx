@@ -4,9 +4,9 @@ import React from 'react'
 import Typed from 'typed.js'
 
 const sentences = [
-	`Zestawy do tworzenia własnych nalewek`,
 	`Idealny pomysł na prezent`,
 	`Każdemu się spodoba`,
+	`Wyłącznie naturalne składniki`,
 ]
 
 function TypedText() {
@@ -16,7 +16,9 @@ function TypedText() {
 	React.useEffect(() => {
 		const typed = new Typed(el.current, {
 			strings: sentences,
+			shuffle: true,
 			typeSpeed: 40,
+			backDelay: 1000,
 			loop: true,
 			backSpeed: 10,
 		})

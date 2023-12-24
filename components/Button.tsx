@@ -24,6 +24,18 @@ const appearanceList = [
 			hover:rounded-[2rem]
 			disabled:opacity-50
 		`
+	},
+	{
+		title: 'underline',
+		className: `
+			px-8 py-4 
+			rounded-xl
+			duration-300
+			border-b hover:shadow-md
+			hover:duration-150
+			hover:rounded-[2rem]
+			disabled:opacity-50
+		`
 	}
 ]
 

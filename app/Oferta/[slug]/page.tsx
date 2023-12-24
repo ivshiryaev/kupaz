@@ -1,3 +1,7 @@
+
+
+import { redirect, RedirectType } from 'next/navigation'
+import type { Metadata } from 'next'
 import React from 'react'
 
 import Image from 'next/image'
@@ -11,14 +15,24 @@ import { AiOutlineUnorderedList } from "react-icons/ai"
 
 import AddToCartButton from './AddToCartButton'
 
-import db from '@/data/db'
-import { getSmakByTitle } from '@/lib/actions/smak.actions'
+import { getSmakById, getSmaki } from '@/lib/actions/smak.actions'
 
-async function Smak({params} : {params : { title: string }}) {
-	const decodedTitle = decodeURIComponent(params.title as string)
-	const response = await getSmakByTitle({ title: decodedTitle })
+export async function generateStaticParams(){
+	const response = await getSmaki()
+	if(!response) return null
+
 	const data = JSON.parse(response)
-	if(!data) return null
+	const slugs = data.map((item) => ({slug: item.title}))
+
+	return slugs
+}
+
+
+async function Smak({ params } : { params: { slug: string }}) {
+	const response = await getSmakById({ id: params.slug })
+	if(!response) return null
+
+	const data = JSON.parse(response)
 
 	const {
 		id,

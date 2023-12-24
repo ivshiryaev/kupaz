@@ -24,7 +24,7 @@ type Props = {
 function SwiperComponent(props: Props) {
 	return (
 		<Swiper 
-			className='w-full h-full'
+			className='w-full h-full rounded-2xl overflow-hidden'
 			navigation={true}
         	modules={[Autoplay, Pagination, Navigation]}
         	autoplay={{
@@ -35,7 +35,7 @@ function SwiperComponent(props: Props) {
 				clickable: true,
 			}}
 		>
-			<SwiperSlide className=''>
+			<SwiperSlide>
 				<Image
 					className='object-cover'
 					src='/Images/Photos/1.jpg'
@@ -43,7 +43,7 @@ function SwiperComponent(props: Props) {
 					fill
 				/>
 			</SwiperSlide>
-			<SwiperSlide className='w-[200px]'>
+			<SwiperSlide>
 				<Image
 					className='object-cover'
 					src='/Images/Photos/2.jpg'

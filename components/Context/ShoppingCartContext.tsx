@@ -12,6 +12,8 @@ import { getSmakById } from '@/lib/actions/smak.actions'
 const cartItemsFromLocalStorage = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cartItems') || '[]') : []
 
 export function ShoppingCartProvider({ children }) {
+    const [isOpenedForTheFirstTime, setIsOpenedForTheFirstTime] = useState(false)
+
     const [items, setItems] = useState(cartItemsFromLocalStorage)
     const [isOpen, setIsOpen] = useState(false)
 
@@ -80,6 +82,9 @@ export function ShoppingCartProvider({ children }) {
     }
 
     function toggleOpen(){
+        if(!isOpenedForTheFirstTime){
+            setIsOpenedForTheFirstTime(true)
+        }
         setIsOpen(!isOpen)
     }
 
@@ -125,6 +130,7 @@ export function ShoppingCartProvider({ children }) {
 
     return (
         <ShoppingCartContext.Provider suppressHydrationWarning={true} value={{
+            isOpenedForTheFirstTime,
             items,
             isOpen,
             toggleOpen,

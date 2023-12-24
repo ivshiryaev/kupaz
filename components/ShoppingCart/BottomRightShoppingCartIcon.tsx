@@ -32,7 +32,6 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 	}, [])
 
 	return(
-		<>
 		<AnimatePresence>
 			{isVisible && totalItemsCount ?
 			<motion.button
@@ -50,7 +49,6 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 				}}
 				onClick={toggleOpen} 
 				className={`
-					hidden lg:flex
 					z-20 
 					shadow-md 
 					fixed 
@@ -58,7 +56,7 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 					bg-white 
 					w-[3.5rem] h-[3.5rem] 
 					text-[1.5rem] 
-					justify-center items-center 
+					flex justify-center items-center 
 					rounded-full
 				`}
 			>
@@ -83,42 +81,6 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 			null
 			}
 		</AnimatePresence>
-		{ totalItemsCount ? 
-			<button 
-				onClick={toggleOpen} 
-				className='
-					lg:hidden
-					z-20 
-					shadow-md 
-					fixed 
-					right-4 bottom-4 
-					bg-white 
-					w-[3.5rem] h-[3.5rem] 
-					text-[1.5rem] 
-					flex justify-center items-center 
-					rounded-full'
-			>
-				<MdOutlineShoppingCart/>
-				{ totalItemsCount ?
-					<span className='
-						absolute
-						-right-1 -top-1
-						text-sm
-						bg-dark
-						text-white
-						shadow-sm
-						rounded-full
-						w-6 h-6
-						flex justify-center items-center
-					'>
-						{totalItemsCount}
-					</span>
-				: null }
-			</button>
-			:
-			null
-		}
-		</>
 	)
 }
 

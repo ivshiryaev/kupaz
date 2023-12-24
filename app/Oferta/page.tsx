@@ -1,16 +1,24 @@
+import type { Metadata } from 'next'
 import React from 'react'
 
 import Filter from './Filter'
 import Card from '@/components/Card'
 
-import { motion, AnimatePresence } from 'framer-motion'
+export const dynamic = 'force-dynamic'
 
 import { getSmaki, getSmakiBySmak } from '@/lib/actions/smak.actions'
+
+export const metadata: Metadata = {
+	title: {
+		default: 'Najlepsze zestawy do tworzenia własnych nalewek domowych',
+	},
+	description: 'Wszystkie najlepsze polskie zestawy do tworzenia nalewek dostępne w naszym sklepie online.',
+}
 
 async function Oferta({ searchParams } : { searchParams: { [key: string]: string | string[] | undefined }}) {
 	let response
 
-	//If search params has some properties - search with filter
+	// If search params has some properties - search with filter
 	if(Object.keys(searchParams).length){
 		response = await getSmakiBySmak({smak: searchParams['smak']})
 	} else {

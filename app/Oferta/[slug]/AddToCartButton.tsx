@@ -13,11 +13,15 @@ const clickedClassName = 'bg-green-400'
 
 function AddToCartButton({className, id} : {className: string, id: number}) {
 	const [ isClicked, setIsClicked ] = React.useState(false)
-	const { increaseItemQuantity } = useShoppingCart()
+	const { increaseItemQuantity, isOpenedForTheFirstTime, toggleOpen } = useShoppingCart()
 
 	function handleClick(){
 		setIsClicked(true)
 		increaseItemQuantity(id)
+
+		if(!isOpenedForTheFirstTime){
+			toggleOpen()
+		}
 
 		setTimeout(() => {
 			setIsClicked(false)

@@ -4,37 +4,19 @@ const appearanceList = [
 	{
 		title: 'fill',
 		className: `
-			px-8 py-4 
 			bg-dark text-white 
-			rounded-xl
-			duration-300
-			hover:duration-150
-			hover:rounded-[2rem]
-			disabled:opacity-50
 		`,
 	},
 	{
 		title: 'outline',
 		className: `
-			px-8 py-4 
-			rounded-xl
-			duration-300
 			outline outline-1
-			hover:duration-150
-			hover:rounded-[2rem]
-			disabled:opacity-50
 		`
 	},
 	{
 		title: 'underline',
 		className: `
-			px-8 py-4 
-			rounded-xl
-			duration-300
 			border-b hover:shadow-md
-			hover:duration-150
-			hover:rounded-[2rem]
-			disabled:opacity-50
 		`
 	}
 ]
@@ -56,7 +38,13 @@ function Button(props: Props) {
 				className={`
 					${appearance}
 					${props.className && props.className}
+					px-8 py-4
 					relative overflow-hidden
+					rounded-2xl
+					duration-300
+					hover:duration-150
+					hover:rounded-[2rem]
+					disabled:opacity-50
 				`}
 				onClick={props.onClick}
 				disabled={props.disabled}

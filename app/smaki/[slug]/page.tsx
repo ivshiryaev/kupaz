@@ -112,38 +112,47 @@ export default async function Smak({ params }) {
 					{/*Discount*/}
 					{discountPercentage &&
 						<div
-							className='
+							className={`
 								flex justify-center items-center
 								absolute
-								bg-alert 
-								px-10 py-2 
-								text-white 
-								text-[0.75rem] lg:text-sm
-								-right-10 bottom-5 
+								w-8 h-8
+								right-6 bottom-6
 								lg:right-auto lg:bottom-auto
-								lg:-left-10 lg:top-5
-								-rotate-45 
-							'
+								lg:left-6 lg:top-6
+							`}
 						>
-							Zniżka {discountPercentage}%
+							<span className='
+								whitespace-nowrap
+								transition
+								px-32 py-1
+								text-white
+								text-[0.75rem] lg:text-sm
+								-rotate-45
+								bg-alert
+							'>
+								Zniżka {discountPercentage}%
+							</span>
 						</div>
 					}
 					{/*Promotion text*/}
-					{promotionText &&
-						<div className={`
-							${discountPercentage && 'hidden'}
-							absolute 
-							bottom-4 right-4
-							lg:right-auto lg:bottom-auto
-							lg:left-4 lg:top-4
-						`}>
-							<span className='
+					{promotionText && !discountPercentage &&
+						<div
+							className={`
 								flex justify-center items-center
-								bg-success
-								rounded-2xl
-								px-4 py-2
-								text-white 
+								absolute
+								w-8 h-8
+								right-4 bottom-4
+								lg:right-auto lg:bottom-auto
+								lg:left-4 lg:top-4
+							`}
+						>
+							<span className='
+								transition
+								px-32 py-1
+								text-white
 								text-[0.75rem] lg:text-sm
+								-rotate-45
+								bg-success
 							'>
 								{promotionText}
 							</span>

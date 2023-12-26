@@ -9,6 +9,7 @@ import { GoHome } from "react-icons/go"
 import { MdOutlineShoppingCart } from "react-icons/md"
 
 import { useShoppingCart } from '@/components/Context/ShoppingCartContext'
+import links from '@/data/navLinks'
 
 function Navbar(){
 	const pathname = usePathname()
@@ -36,36 +37,23 @@ function Navbar(){
 				<GoHome/>
 			</Link>
 			<ul className='flex gap-2 items-center'>
-				<li>
-					<Link 
-						href='/Oferta' 
-						className={`
-							${pathname === '/Oferta' ? 'bg-gray-100 shadow-inner' : 'hover:shadow-md bg-white'}
-							transition 
-							px-4 py-2 
-							rounded-2xl 
-							active:bg-gray-100 
-							active:shadow-inner
-						`}
-					>
-						Oferta
-					</Link>
-				</li>
-				<li>
-					<Link 
-						href='/Contact' 
-						className={`
-							${pathname === '/Contact' ? 'bg-gray-100 shadow-inner' : 'hover:shadow-md bg-white'}
-							transition 
-							px-4 py-2 
-							rounded-2xl 
-							active:bg-gray-100 
-							active:shadow-inner
-						`}
-					>
-						Skontaktuj się
-					</Link>
-				</li>
+				{links.map(link => (
+					<li key={link.title}>
+						<Link 
+							href={`/${link.href}`} 
+							className={`
+								${pathname === `/${link.href}` ? 'bg-gray-100 shadow-inner' : 'hover:shadow-md bg-white'}
+								transition 
+								px-4 py-2 
+								rounded-2xl 
+								active:bg-gray-100 
+								active:shadow-inner
+							`}
+						>
+							{link.title}
+						</Link>
+					</li>
+				))}
 			</ul>
 			<button
 				onClick={toggleShoppingCartOpen}
@@ -83,19 +71,23 @@ function Navbar(){
 				`}
 			>
 				<MdOutlineShoppingCart/>
-				<span className='
-					absolute
-					-right-1 -top-1
-					text-sm
-					bg-dark
-					text-white
-					shadow-sm
-					rounded-full
-					w-6 h-6
-					flex justify-center items-center
-				'>
-					{totalItemsCount}
-				</span>
+				{totalItemsCount ? 
+					<span className='
+						absolute
+						-right-1 -top-1
+						text-sm
+						bg-dark
+						text-white
+						shadow-sm
+						rounded-full
+						w-6 h-6
+						flex justify-center items-center
+					'>
+						{totalItemsCount}
+					</span>
+					:
+					null
+				}
 			</button>
 		</div>
 	)

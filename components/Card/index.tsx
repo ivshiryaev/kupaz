@@ -47,6 +47,7 @@ async function Card({id} : {id: number}) {
 					<Link
 						href={`/smaki/${slug}`}
 						className='
+							group
 							flex items-center
 							bg-white
 							rounded-2xl overflow-hidden
@@ -106,6 +107,7 @@ async function Card({id} : {id: number}) {
 								`}
 							>
 								<span className='
+									group-hover:scale-105
 									whitespace-nowrap
 									transition
 									px-32 py-1

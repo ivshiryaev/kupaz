@@ -204,7 +204,7 @@ export default async function Smak({ params }) {
 						rounded-2xl
 						lg:bg-transparent lg:items-start
 						lg:p-0
-						max-w-[550px]
+						lg:max-w-[550px]
 					'>
 						<p className='text-gray-400 text-sm flex gap-2 items-center'><AiOutlineUnorderedList/>Składniki:</p>
 						<ListOfComponents items={skladniki}/>

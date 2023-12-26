@@ -53,11 +53,8 @@ function Hero() {
 						Zestawy do robienia własnych nalewek.
 					</p>
 					<div className='flex flex-wrap gap-2 justify-center items-center'>
-						<Link href='/Oferta'>
+						<Link href='/smaki'>
 							<Button appearance='fill' className='w-fit'>Zobacz wszystkie smaki</Button>
-						</Link>
-						<Link href='/#AboutUs'>
-							<Button appearance='outline' className='w-fit'>O nas</Button>
 						</Link>
 					</div>
 				</div>

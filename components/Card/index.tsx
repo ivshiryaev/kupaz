@@ -56,6 +56,7 @@ async function Card({id} : {id: number}) {
 							hover:duration-150
 							hover:shadow-lg
 							active:shadow-none
+							group
 						'
 					>
 						{/*Image*/}
@@ -95,40 +96,51 @@ async function Card({id} : {id: number}) {
 						{/*Discount*/}
 						{discountPercentage &&
 							<div
-								className='
+								className={`
 									flex justify-center items-center
 									absolute
-									bg-alert 
-									px-10 py-2 
-									text-white 
-									text-[0.75rem] lg:text-sm
-									-right-10 bottom-5 
+									w-8 h-8
+									right-6 bottom-6
 									lg:right-auto lg:bottom-auto
-									lg:-left-10 lg:top-5
-									-rotate-45 
-								'
+									lg:left-6 lg:top-6
+								`}
 							>
-								Zniżka {discountPercentage}%
+								<span className='
+									whitespace-nowrap
+									transition
+									px-32 py-1
+									text-white
+									text-[0.75rem] lg:text-sm
+									-rotate-45
+									bg-alert
+								'>
+									Zniżka {discountPercentage}%
+								</span>
 							</div>
 						}
 						{/*Promotion text*/}
-						{promotionText &&
+						{promotionText && !discountPercentage &&
 							<div
 								className={`
-									${discountPercentage && 'hidden'}
 									flex justify-center items-center
 									absolute
-									bg-success
-									px-10 py-2
-									text-white
-									text-[0.75rem] lg:text-sm
-									-right-10 bottom-5 
+									w-8 h-8
+									right-4 bottom-4
 									lg:right-auto lg:bottom-auto
-									lg:-left-10 lg:top-5
-									-rotate-45 
+									lg:left-4 lg:top-4
 								`}
 							>
-								{promotionText}
+								<span className='
+									group-hover:scale-105
+									transition
+									px-32 py-1
+									text-white
+									text-[0.75rem] lg:text-sm
+									-rotate-45
+									bg-success
+								'>
+									{promotionText}
+								</span>
 							</div>
 						}
 					</Link>

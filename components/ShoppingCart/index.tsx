@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import dynamic from 'next/dynamic'
 
 import React from 'react'
@@ -26,6 +26,7 @@ function ShoppingCart() {
 	const [isClicked, setIsClicked] = React.useState(false)
 
 	const {
+		isCounting,
 		items,
 		isOpen,
 		toggleOpen,
@@ -49,7 +50,14 @@ function ShoppingCart() {
 	async function handleButtonClick(){
 		setIsClicked(true)
 
-		const response = await createCheckoutSession({items, totalPrice, deliveryPrice})
+		const cancel_url = router.asPath
+
+		const response = await createCheckoutSession({
+			items, 
+			totalPrice, 
+			deliveryPrice, 
+			cancel_url
+		})
 		if(!response) {
 			setIsClicked(false)
 			return
@@ -158,7 +166,7 @@ function ShoppingCart() {
 														<p>{totalItemsCount} szt.</p>
 													</div>
 												</div>
-												<Button disabled={isClicked} appearance='fill' onClick={handleButtonClick} className='flex gap-2 items-center justify-center'>
+												<Button disabled={isClicked || isCounting} appearance='fill' onClick={handleButtonClick} className='flex gap-2 items-center justify-center'>
 													{isClicked ? 
 														<>
 															<span className='animate-spin text-[1.25rem]'><AiOutlineLoading3Quarters/></span>

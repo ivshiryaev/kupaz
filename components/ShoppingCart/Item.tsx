@@ -35,7 +35,7 @@ function Item({id, quantity} : {id: number, quantity: number}) {
 		}
 
 		getData()
-	},[])
+	},[id])
 
 	// const response = await getSmakById({id})
 	// if(!response) return null

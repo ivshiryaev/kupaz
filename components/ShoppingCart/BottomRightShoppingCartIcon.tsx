@@ -13,6 +13,7 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 	const [isVisible, setIsVisible] = React.useState(false)
 
 	const {
+		isOpen: isShoppingCartOpen,
 		toggleOpen,
 		totalItemsCount
 	} = useShoppingCart()
@@ -32,8 +33,69 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 	}, [])
 
 	return(
+		<>
+		{/*Lg screens*/}
 		<AnimatePresence>
-			{isVisible && totalItemsCount ?
+			{isVisible && totalItemsCount && !isShoppingCartOpen ?
+			<motion.button
+				initial={{
+					opacity: 0,
+					y: 100
+				}}
+				animate={{
+					opacity: 1,
+					y: 0
+				}}
+				exit={{
+					opacity: 0,
+					y: 100
+				}}
+				whileHover={{
+					scale: 1.1,
+					rotate: 5
+				}}
+				whileTap={{
+					scale: 0.9,
+					rotate: -10
+				}}
+				onClick={toggleOpen} 
+				className={`
+					hidden
+					z-20 
+					shadow-md 
+					fixed 
+					right-4 bottom-4 
+					bg-white 
+					w-[3.5rem] h-[3.5rem] 
+					text-[1.5rem] 
+					lg:flex justify-center items-center 
+					rounded-full
+				`}
+			>
+				<MdOutlineShoppingCart/>
+				{ totalItemsCount ?
+					<span className='
+						absolute
+						-right-1 -top-1
+						text-sm
+						bg-dark
+						text-white
+						shadow-sm
+						rounded-full
+						w-6 h-6
+						flex justify-center items-center
+					'>
+						{totalItemsCount}
+					</span>
+				: null }
+			</motion.button>
+			:
+			null
+			}
+		</AnimatePresence>
+
+		{/*Mobile screens*/}
+		<AnimatePresence>
 			<motion.button
 				initial={{
 					opacity: 0,
@@ -49,6 +111,7 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 				}}
 				onClick={toggleOpen} 
 				className={`
+					lg:hidden
 					z-20 
 					shadow-md 
 					fixed 
@@ -77,10 +140,8 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 					</span>
 				: null }
 			</motion.button>
-			:
-			null
-			}
 		</AnimatePresence>
+		</>
 	)
 }
 

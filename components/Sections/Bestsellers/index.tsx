@@ -28,7 +28,7 @@ async function Bestsellers() {
 				))}
 			</ul>
 			<div className='w-full flex justify-center'>
-				<Link href='/Oferta'>
+				<Link href='/smaki'>
 					<Button appearance='fill' className='w-fit'>Zobacz wszystkie smaki</Button>			
 				</Link>
 			</div>

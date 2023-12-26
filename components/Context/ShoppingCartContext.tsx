@@ -29,6 +29,11 @@ export function ShoppingCartProvider({ children }) {
 
         setIsCounting(true)
         countTotalItemsPrice()
+ 
+        // DANGER: used to prevent react from showing error that this effect rely on countTotalItemsPrice()
+        // There is another official experimental solution 
+        // https://react.dev/reference/react/useEffect#reading-the-latest-props-and-state-from-an-effect
+        // eslint-ignore-next-line react-hooks/exhaustive-deps
     }, [items])
 
     function countDeliveryPrice(){
@@ -131,6 +136,7 @@ export function ShoppingCartProvider({ children }) {
     return (
         <ShoppingCartContext.Provider suppressHydrationWarning={true} value={{
             isOpenedForTheFirstTime,
+            isCounting,
             items,
             isOpen,
             toggleOpen,

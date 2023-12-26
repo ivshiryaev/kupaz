@@ -58,7 +58,7 @@ function Hero() {
 					p-8
 				'>
 					<p className='text-center'>Zestawy do tworzenia własnych nalewek</p>
-					<Link href='/Oferta' className='w-full'>
+					<Link href='/smaki' className='w-full'>
 						<Button appearance='fill' className='w-full'>Zobacz nasze smaki</Button>
 					</Link>
 				</div>

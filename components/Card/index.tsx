@@ -9,6 +9,7 @@ import Image from 'next/image'
 import AddToCartButton from './AddToCartButton'
 
 import { getSmakById } from '@/lib/actions/smak.actions'
+import { getSmakSlug } from '@/lib/utils'
 
 async function Card({id} : {id: number}) {
 	const response = await getSmakById({id})
@@ -25,6 +26,8 @@ async function Card({id} : {id: number}) {
 		promotionText
 	} = data
 
+	const slug = getSmakSlug(data)
+
 	let discountAmount = 0
 	let finalPrice = price
 
@@ -39,7 +42,7 @@ async function Card({id} : {id: number}) {
 	return (
 			<article className='relative'>
 				<Link
-					href={`/Oferta/${id}`}
+					href={`/smaki/${slug}`}
 					className='
 						flex items-center
 						bg-white
@@ -113,8 +116,8 @@ async function Card({id} : {id: number}) {
 								flex justify-center items-center
 								absolute
 								bg-success
-								px-10 py-2 
-								text-white 
+								px-10 py-2
+								text-white
 								text-[0.75rem] lg:text-sm
 								-right-10 bottom-5 
 								lg:right-auto lg:bottom-auto

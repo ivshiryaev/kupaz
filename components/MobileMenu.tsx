@@ -10,6 +10,8 @@ import { BsInstagram, BsFacebook } from 'react-icons/bs'
 import { GoHome } from "react-icons/go"
 import { PiBeerBottleThin } from "react-icons/pi"
 
+import links from '@/data/navLinks'
+
 function MobileMenu() {
 	const pathname = usePathname()
 	const [isOpen, setIsOpen] = React.useState(false)
@@ -69,21 +71,23 @@ function MobileMenu() {
 									<span>Strona główna</span>
 								</Link>
 							</li>
-							<li key='Oferta'>
-								<Link 
-									onClick={handleLinkClick} 
-									href='/Oferta' 
-									className={`
-										${pathname === '/Oferta' ? 'bg-gray-100 shadow-inner' : 'hover:shadow-md bg-white'}
-										p-1
-										flex gap-4 items-center 
-										rounded-[2rem] 
-									`}
-								>
-									<span className='w-[3rem] h-[3rem] bg-white rounded-full flex justify-center items-center'><PiBeerBottleThin/></span>
-									<span>Oferta</span>
-								</Link>
-							</li>
+							{links.map(link => (
+								<li key={link.title}>
+									<Link 
+										onClick={handleLinkClick} 
+										href={`/${link.href}`} 
+										className={`
+											${pathname === `/${link.href}` ? 'bg-gray-100 shadow-inner' : 'hover:shadow-md bg-white'}
+											p-1
+											flex gap-4 items-center 
+											rounded-[2rem] 
+										`}
+									>
+										<span className='w-[3rem] h-[3rem] bg-white rounded-full flex justify-center items-center'><PiBeerBottleThin/></span>
+										<span>{link.title}</span>
+									</Link>
+								</li>
+							))}
 						</ul>
 						<div className='flex gap-4 justify-center'>
 							<Link target='_blank' href='https://www.instagram.com/kupaz.pl/' className='hover:shadow-lg cursor-pointer active:shadow-inner active:bg-gray-100 transition w-[3rem] h-[3rem] bg-white flex justify-center items-center rounded-full text-[1.5rem]'>
@@ -93,7 +97,7 @@ function MobileMenu() {
 								<BsFacebook/>
 							</Link>
 						</div>
-						<ul className='flex flex-col'>
+						<ul className='flex flex-col text-sm'>
 							<li key='PolitykaPrywatnosci' className='p-2 flex justify-center'>
 								<Link href='/PolitykaPrywatnosci'>Polityka Prywatności(RODO)</Link>
 							</li>

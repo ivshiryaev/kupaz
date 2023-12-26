@@ -29,7 +29,7 @@ const listItemVariants = {
 	}
 }
 
-const colors = ['#FFF4BA','#CCF3FF','#FFEBCD','#C3FFC9','#F6F6F6']
+const colors = ['bg-teal-50', 'bg-fuchsia-50', 'bg-rose-50', 'bg-amber-50', 'bg-zinc-50', 'bg-cyan-50', 'bg-indigo-50', 'bg-red-50']
 
 function getRandomColor(): string {
 	const randomIndex: number = Math.floor(Math.random() * colors.length);

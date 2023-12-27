@@ -18,7 +18,7 @@ function About() {
 				justify-center
 				gap-4
 			'>
-				<p className='text-[1.5rem]'>O nas</p>
+				<h2 className='text-[1.5rem]'>O nas</h2>
 				<p className='whitespace-pre-wrap'>{data}</p>
 			</div>
 			<div className='

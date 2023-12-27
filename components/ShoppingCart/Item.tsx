@@ -15,8 +15,6 @@ import { getSmakById } from '@/lib/actions/smak.actions'
 
 function Item({id, quantity} : {id: number, quantity: number}) {
 	const [data, setData] = React.useState(null)
-	const priceMutlipliedByQuantity = data?.price * quantity || 0
-	const formattedPriceMutlipliedByQuantity = (priceMutlipliedByQuantity / 100).toFixed(2)
 
 	const { 
 		increaseItemQuantity,
@@ -37,24 +35,18 @@ function Item({id, quantity} : {id: number, quantity: number}) {
 		getData()
 	},[id])
 
-	// const response = await getSmakById({id})
-	// if(!response) return null
+	let discountAmount = 0
+	let finalPrice = data?.price || 0
 
-	// const data = JSON.parse(response)
+	if(data?.discountPercentage){
+		discountAmount = data?.price * data?.discountPercentage / 100
+		finalPrice = data?.price - discountAmount
+	}
 
+	finalPrice = finalPrice.toFixed()
 
-	// let discountAmount = 0
-	// let finalPrice = price
-
-	// if(discountPercentage){
-	// 	discountAmount = price * discountPercentage / 100
-	// 	finalPrice = price - discountAmount
-	// }
-
-	// finalPrice = finalPrice.toFixed()
-
-	// const totalPrice = quantity * finalPrice
-	// const formattedPrice = (totalPrice / 100).toFixed(2)
+	const totalPrice = quantity * finalPrice
+	const formattedPrice = (totalPrice / 100).toFixed(2)
 
 	function handleLinkClick(){
 		toggleOpen()
@@ -105,7 +97,7 @@ function Item({id, quantity} : {id: number, quantity: number}) {
 					<p>{quantity} szt.</p>
 					<span onClick={handleClickPlus} className='hover:bg-gray-100 w-[2.25rem] h-[2.25rem] flex justify-center items-center bg-white rounded-full transition cursor-pointer active:shadow-inner active:bg-gray-200 transition'><AiOutlinePlus/></span>
 				</div>
-				<p className='text-[1.25rem]'>{formattedPriceMutlipliedByQuantity} zł</p>
+				<p className='text-[1.25rem]'>{formattedPrice} zł</p>
 			</div>
 		</article>
 	)

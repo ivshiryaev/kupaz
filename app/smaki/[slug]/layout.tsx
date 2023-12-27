@@ -8,7 +8,7 @@ function SmakLayout({ children } : { children: React.ReactNode }) {
 		<>
 			{children}
 			<HowTo/>
-			<FAQ/>
+			<FAQ heading='p'/>
 		</>
 	)
 }

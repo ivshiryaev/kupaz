@@ -1,5 +1,4 @@
 import Hero from '@/components/Sections/Hero'
-import MobileHero from '@/components/Sections/MobileHero'
 import Bestsellers from '@/components/Sections/Bestsellers'
 import FAQ from '@/components/Sections/FAQ'
 import About from '@/components/Sections/About'
@@ -13,11 +12,10 @@ export default function Home() {
     return (
         <>
             <Hero/>
-            <MobileHero/>
             <About/>
             <Promotions/>
             <Bestsellers/>
-            <FAQ/>
+            <FAQ heading='h3'/>
             {/*<MobileSwiperSection/>*/}
             {/*<HowTo/>*/}
             <Contact/>

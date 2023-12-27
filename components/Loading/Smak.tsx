@@ -13,7 +13,7 @@ function Smak() {
 		>
 			{/*Image*/}
 			<div className='
-				bg-white
+				bg-gray-100
 				relative
 				rounded-2xl overflow-hidden
 				w-full h-[500px]

@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 		default: 'Najlepsze zestawy do tworzenia własnych nalewek domowych',
 	},
 	description: 'Wszystkie najlepsze polskie zestawy do tworzenia nalewek dostępne w naszym sklepie online.',
+	alternates: {
+		canonical: '/smaki'
+	}
 }
 
 async function Oferta({ searchParams } : { searchParams: { [key: string]: string | string[] | undefined }}) {
@@ -32,9 +35,9 @@ async function Oferta({ searchParams } : { searchParams: { [key: string]: string
 
 	return (
 		<>
-			<p className='lg:hidden text-[1.5rem] rounded-2xl bg-white p-6 lg:p-8'>
-				Oferta
-			</p>
+			<h1 className='lg:hidden text-[1.5rem] rounded-2xl bg-white p-6 lg:p-8'>
+				Smaki
+			</h1>
 			<div className='flex justify-center'>
 				<Filter/>
 			</div>

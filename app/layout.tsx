@@ -19,7 +19,28 @@ export const metadata: Metadata = {
         default: 'Zestawy do tworzenia własnych nalewek domowych | Sklep internetowy | Kupaz.pl',
         template: '%s | Kupaz.pl'
     },
-description: 'Poznaj wszystkie najlepsze polskie nalewki dostępne w naszym sklepie online.',
+    description: 'Poznaj wszystkie najlepsze polskie nalewki dostępne w naszym sklepie online.',
+    keywords: [
+        'nalewki',
+        'prezenty',
+        'zestawy do nalewek',
+    ],
+    creator:'Ivan Shyriaiev',
+    publisher:'Ivan Shyriaiev',
+    robots: {
+        index: true,
+        googleBot: {
+            index: true,
+        }
+    },
+    category: 'food and drink',
+    other: {
+        secret: 'Uwielbiamy kotów 🐈'
+    },
+    metadataBase: new URL('https://kupaz.pl'),
+    alternates: {
+        canonical: '/'
+    }
 }
 
 export default function RootLayout({
@@ -28,13 +49,13 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-            <html lang="en">
+            <html lang="pl">
                 <body className={`
                     ${montserrat.className}
                     overflow-x-hidden
                     text-dark
                     bg-gray-100
-                    p-2 lg:py-4
+                    p-2
                     flex flex-col 
                     gap-2 lg:gap-4
                 `}>

@@ -21,8 +21,8 @@ function Navbar(){
 	} = useShoppingCart()
 
 	return(
-		<Slide verticalDirection='down' value={50}>
-			<div className='hidden lg:flex justify-between items-center px-4 py-2 rounded-2xl bg-white'>
+		<Slide className='hidden lg:block' verticalDirection='down' value={50}>
+			<nav className='hidden lg:flex justify-between items-center px-4 py-2 rounded-2xl bg-white'>
 				<Link
 					href='/'
 					className={`
@@ -92,7 +92,7 @@ function Navbar(){
 						null
 					}
 				</button>
-			</div>
+			</nav>
 		</Slide>
 	)
 }

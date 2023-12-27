@@ -9,9 +9,9 @@ import Swiper from '@/components/Swiper'
 function Hero() {
 	return (
 		<section className='
-			hidden
-			lg:flex
-			gap-2 lg:gap-4
+			flex
+			gap-2 
+			lg:gap-4
 		'>
 			{/*Left Wrapper*/}
 			<div className='
@@ -38,10 +38,26 @@ function Hero() {
 				</div>
 			</div>
 			{/*Logo and button wrapper*/}
-			<div className='flex-1 flex flex-col gap-2 lg:gap-4'>
+			<div className='
+				relative
+				overflow-hidden
+				h-screen lg:h-auto rounded-2xl lg:rounded-none
+				flex-1 flex flex-col gap-4
+				lg:items-stretch
+				items-center justify-center
+				bg-white lg:bg-transparent
+			'>
+				<Image
+					className='lg:hidden object-cover opacity-25'
+					src='/Images/Hero/Background.jpg'
+					alt='background image'
+					fill
+				/>
 				<div className='
-					rounded-2xl bg-white
-					p-8
+					relative
+					rounded-2xl 
+					lg:bg-white
+					lg:p-8
 					flex justify-center items-center
 				'>
 					<Image 
@@ -52,14 +68,16 @@ function Hero() {
 					/>
 				</div>
 				<div className='
+					relative
 					flex flex-col gap-4
 					justify-center items-center
-					rounded-2xl bg-white
-					p-8
+					rounded-2xl 
+					lg:bg-white
+					lg:p-8
 				'>
-					<p className='text-center'>Zestawy do tworzenia własnych nalewek</p>
-					<Link href='/smaki' className='w-full'>
-						<Button appearance='fill' className='w-full'>Zobacz nasze smaki</Button>
+					<h1 className='text-center'>Zestawy do tworzenia własnych nalewek</h1>
+					<Link href='/smaki' className='lg:w-full'>
+						<Button appearance='fill' className='lg:w-full'>Zobacz nasze smaki</Button>
 					</Link>
 				</div>
 			</div>

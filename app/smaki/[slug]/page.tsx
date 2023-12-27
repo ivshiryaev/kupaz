@@ -28,14 +28,31 @@ export async function generateStaticParams(){
 	return arrayOfSlugs
 }
 
-export default async function Smak({ params }) {
+export async function generateMetadata({params}){
 	const id = parseInt(getIdFromSlug(params.slug))
 
-	// const smakiRaw = await getSmaki()
-	// if(!smakiRaw) return null
-	// const smaki = JSON.parse(smakiRaw)
+	const response = await getSmakById({id})
+	const data = JSON.parse(response)
 
-	// const currentSmak = smaki.find(smak => smak.id === id)
+	const slug = getSmakSlug(data)
+
+	return {
+		title: `${data.title} - zestaw do samodzielnego przygotowania nalewki`,
+		description: 'Poznaj wszystkie najlepsze polskie nalewki dostępne w naszym sklepie online.',
+		robots: {
+		    index: true,
+		    googleBot: {
+		        index: true,
+		    }
+		},
+		alternates: {
+		    canonical: `https://kupaz.pl/smaki/${slug}`
+		}
+	}
+}
+
+export default async function Smak({ params } : { params: { slug: string }}) {
+	const id = parseInt(getIdFromSlug(params.slug))
 
 	let data
 
@@ -48,7 +65,7 @@ export default async function Smak({ params }) {
 		// check whether the current URL's readable portion matches the post's actual slug
 		if(correctSlug !== params.slug){
 			// if not, redirect to the correct URL
-			const redirectUrl = `/Oferta/${correctSlug}`
+			const redirectUrl = `/smaki/${correctSlug}`
 			await redirect(redirectUrl, RedirectType.replace)
 		}
 	} catch(e) {
@@ -172,23 +189,26 @@ export default async function Smak({ params }) {
 						lg:bg-transparent lg:items-start
 						lg:p-0
 					'>
-						<p className='text-[1.5rem]'>{title}</p>
+						<h1 className='text-[1.5rem]'>{title}</h1>
 						<div className='flex justify-center items-center gap-2'>
-							<p className='text-gray-400 text-sm'>Smak: <span>{smak}</span></p>
+							<h2 className='text-gray-400 text-sm'>Smak: <span>{smak}</span></h2>
 						</div>
 					</div>
 					{/*Price*/}
 					<div className='
 						p-4
-						flex gap-2
+						flex 
+						gap-0 lg:gap-2
+						flex-col lg:flex-row
 						bg-white 
 						rounded-2xl
-						justify-center lg:justify-start
-						lg:bg-transparent lg:items-center
+						justify-center items-center
+						lg:justify-start lg:items-center
+						lg:bg-transparent 
 						lg:p-0
 					'>
-						<span className='text-[1.5rem]'>{formattedPrice} zł</span>
-						{discountPercentage && <span className='text-white text-sm line-through flex justify-center items-center bg-alert rounded-2xl px-2 py-1'>{initialFormattedPrice} zł</span>}
+						<h3 className='text-[1.5rem]'>{formattedPrice} zł</h3>
+						{discountPercentage && <span className='order-first lg:order-last text-white text-sm line-through flex justify-center items-center bg-alert rounded-2xl px-2 py-1'>{initialFormattedPrice} zł</span>}
 					</div>
 					{/*Add to cart button*/}
 					<AddToCartButton id={id} className='lg:order-last flex gap-2 justify-center items-center lg:w-fit'/>
@@ -203,7 +223,7 @@ export default async function Smak({ params }) {
 						max-w-[800px]
 					'>
 						<p className='text-gray-400 text-sm flex gap-2 items-center'><MdOutlineDescription/>Opis:</p>
-						<p className='whitespace-pre-wrap'>{description}</p>
+						<h4 className='whitespace-pre-wrap'>{description}</h4>
 					</div>
 					{/*Components/Skladniki*/}
 					<div className='

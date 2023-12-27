@@ -102,7 +102,7 @@ function ShoppingCart() {
 								x:'100%'
 							}}
 						>
-							<div className='bg-white h-full flex flex-col lg:rounded-2xl'>
+							<aside className='bg-white h-full flex flex-col lg:rounded-2xl'>
 								{/*Heading*/}
 								<div className='flex justify-between px-4 py-3 lg:p-6 shrink-0'>
 									<div className='flex items-center gap-2 grow text-[1.5rem]'>
@@ -198,7 +198,7 @@ function ShoppingCart() {
 										</motion.div>
 									}
 								</AnimatePresence>
-							</div>
+							</aside>
 						</motion.div>
 					</>
 				}

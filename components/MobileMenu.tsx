@@ -34,7 +34,7 @@ function MobileMenu() {
 		<>
 			<AnimatePresence>
 				{isOpen && 
-					<motion.div
+					<motion.aside
 						initial={{
 							y:'-100%'
 						}}
@@ -105,7 +105,7 @@ function MobileMenu() {
 								<Link href='/RegulaminStrony'>Regulamin Strony</Link>
 							</li>
 						</ul>
-					</motion.div>
+					</motion.aside>
 				}
 			</AnimatePresence>
 

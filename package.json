@@ -9,17 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.3",
     "framer-motion": "^10.16.16",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.49.2",
     "react-icons": "^4.12.0",
     "slugify": "^1.6.6",
     "stripe": "^14.9.0",
     "swiper": "^11.0.5",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",

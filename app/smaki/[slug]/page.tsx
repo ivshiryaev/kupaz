@@ -1,3 +1,6 @@
+//Dynamic component
+export const dynamic = 'force-dynamic'
+
 import { redirect, notFound, RedirectType } from 'next/navigation'
 import { isRedirectError } from 'next/dist/client/components/redirect'
 import { Metadata, ResolvingMetadata } from 'next'
@@ -15,18 +18,6 @@ import AddToCartButton from './AddToCartButton'
 
 import { getSmaki, getSmakById } from '@/lib/actions/smak.actions'
 import { getIdFromSlug, getSmakSlug } from '@/lib/utils'
-
-export async function generateStaticParams(){
-	const response = await getSmaki()
-	if(!response) return null
-
-	const data = JSON.parse(response)
-	const arrayOfSlugs = data.map((item) => ({
-		slug: getSmakSlug(item)
-	}))
-
-	return arrayOfSlugs
-}
 
 export async function generateMetadata({params}){
 	const id = parseInt(getIdFromSlug(params.slug))

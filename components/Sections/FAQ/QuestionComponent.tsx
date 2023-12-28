@@ -14,19 +14,22 @@ function QuestionComponent({question, answer} : {question: string, answer: strin
 
 	return (
 		<motion.div
-			layout
 			onClick={toggle} 
-			className='
-				transition
+			className={`
+				transition-all
 				border-b
 				last:border-none
 				p-6 lg:px-0 lg:py-4
 				overflow-hidden 
 				cursor-pointer 
-				flex flex-col gap-2
-			'
+				flex flex-col
+				${isOpen ? 'gap-2' : 'gap-0'}
+			`}
 		>
-			<div className='flex gap-4 justify-between items-center'>
+			<summary 
+				onClick={(e) => e.preventDefault()} 
+				className='flex gap-4 justify-between items-center'
+			>
 				<p className=''>{question}</p>
 				<motion.span
 					transition={{
@@ -38,27 +41,25 @@ function QuestionComponent({question, answer} : {question: string, answer: strin
 				>
 					<IoIosArrowDown className='text-[1.5rem]'/>
 				</motion.span>
-			</div>
-			<AnimatePresence>
-				{isOpen && 
-					<motion.div
-						initial={{
-							height: 0,
-							opacity: 0
-						}}
-						animate={{
+			</summary>
+			<motion.div
+				animate={ isOpen ? 'visible' : 'hidden'}
+				variants={
+					{
+						visible: {
+
 							height: 'auto',
 							opacity: 1
-						}}
-						exit={{
+						},
+						hidden: {
 							height: 0,
 							opacity: 0
-						}}
-					>
-						<p className='whitespace-pre-wrap'>{answer}</p>
-					</motion.div>
-				}
-			</AnimatePresence>
+						}
+					}
+				}	
+			>
+				<p className='whitespace-pre-wrap'>{answer}</p>
+			</motion.div>
 		</motion.div>
 	)
 }

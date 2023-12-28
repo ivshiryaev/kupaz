@@ -1,3 +1,6 @@
+//Dynamic component
+export const dynamic = 'force-dynamic'
+
 import React from 'react'
 
 import { MdAddShoppingCart } from "react-icons/md"

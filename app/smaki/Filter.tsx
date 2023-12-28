@@ -29,7 +29,7 @@ function Filter() {
 	}
 
 	return (
-		<div className='flex items-center gap-4 px-6 lg:px-4 py-2 rounded-2xl bg-white w-fit'>
+		<div className='flex items-center justify-center gap-4 px-6 lg:px-4 py-2 rounded-2xl bg-white lg:w-fit w-full'>
 			<label htmlFor="smak">Smak:</label>
 			<select defaultValue={searchParams.get('smak')} name="smak" id="smak" className='p-2 rounded-lg' onChange={handleChange}>
 				{data.smaki.map(item => (

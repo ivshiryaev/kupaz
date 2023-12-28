@@ -9,17 +9,17 @@ function FAQ({heading}:{heading?: string}) {
 
 	return (
 		<section className='
-			rounded-2xl 
-			bg-white 
+			px-0 py-6 lg:py-8
+			bg-white rounded-2xl
 			flex flex-col 
-			lg:p-8 lg:gap-4
+			gap-2 lg:gap-4
 		'>
-			<div className='p-6 lg:p-0 border-1 lg:border-0 border-b border-gray-200'>
-				<Tag className='text-[1.5rem]'>Częste pytania (FAQ)</Tag>
+			<div>
+				<Tag className='text-[1.5rem] text-center'>Częste pytania (FAQ)</Tag>
 			</div>
 			<ul className='flex flex-col'>
 				{data.map((item, idx) => (
-					<li key={idx} className='border-b last:border-none'>
+					<li key={idx} className='border-b border-gray-100 last:border-none'>
 						<QuestionComponent question={item.question} answer={item.answer}/>
 					</li>
 				))}

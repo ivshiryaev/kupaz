@@ -14,6 +14,9 @@ async function Bestsellers() {
 
 	return (
 		<section className='flex flex-col gap-2 lg:gap-4'>
+			<p className='text-[1.5rem] rounded-2xl bg-white p-6 lg:p-8 text-center'>
+				Bestsellery
+			</p>
 			<ul className='
 				grid 
 				grid-flow-row 
@@ -28,8 +31,8 @@ async function Bestsellers() {
 				))}
 			</ul>
 			<div className='w-full flex justify-center'>
-				<Link href='/smaki'>
-					<Button appearance='fill' className='w-fit'>Zobacz wszystkie smaki</Button>			
+				<Link href='/smaki' className='w-full lg:w-fit'>
+					<Button appearance='fill' className='w-full lg:w-fit'>Zobacz wszystkie smaki</Button>			
 				</Link>
 			</div>
 		</section>

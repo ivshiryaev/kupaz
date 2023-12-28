@@ -16,10 +16,9 @@ function QuestionComponent({question, answer} : {question: string, answer: strin
 		<motion.div
 			onClick={toggle} 
 			className={`
+				px-6 py-6 lg:px-8 lg:py-4
+				h-full
 				transition-all
-				border-b
-				last:border-none
-				p-6 lg:px-0 lg:py-4
 				overflow-hidden 
 				cursor-pointer 
 				flex flex-col
@@ -32,6 +31,10 @@ function QuestionComponent({question, answer} : {question: string, answer: strin
 			>
 				<p className=''>{question}</p>
 				<motion.span
+					className={`
+						w-[1.5rem] h-[1.5rem] rounded-full transition-colors flex justify-center items-center
+						${isOpen ? 'bg-dark text-white' : 'bg-transparent'}
+					`}
 					transition={{
 						type:'spring'
 					}}
@@ -39,7 +42,7 @@ function QuestionComponent({question, answer} : {question: string, answer: strin
 						rotate: `${isOpen ? '180deg' : '0deg'}`
 					}}
 				>
-					<IoIosArrowDown className='text-[1.5rem]'/>
+					<IoIosArrowDown className=''/>
 				</motion.span>
 			</summary>
 			<motion.div

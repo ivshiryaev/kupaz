@@ -10,8 +10,8 @@ function Contact() {
 	return (
 		<section className='flex flex-col lg:flex-row gap-2 lg:gap-4'>
 			<ContactForm/>
-			<div className='flex flex-col gap-2 lg:gap-4 flex-1'>
-				<div className='flex flex-col justify-center gap-4 p-6 lg:p-8 bg-white rounded-2xl grow'>
+			<div className='flex flex-col gap-2 lg:gap-4 w-full lg:w-1/2'>
+				<div className='flex flex-col justify-center items-center lg:items-start gap-4 p-6 lg:p-8 bg-white rounded-2xl grow'>
 					<p className='text-[1.5rem]'>Przydatne linki</p>
 					<div className='flex gap-4'>
 						<Link target='_blank' href='https://www.instagram.com/kupaz.pl/' className='hover:shadow-lg cursor-pointer active:shadow-inner active:bg-gray-100 transition w-[3rem] h-[3rem] bg-white flex justify-center items-center rounded-full text-[1.5rem]'>

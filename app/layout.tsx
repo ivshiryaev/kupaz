@@ -40,6 +40,15 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://kupaz.pl'),
     alternates: {
         canonical: '/'
+    },
+    openGraph: {
+        images: [
+            {
+                url: '/Images/OG/PreviewImage.jpg',
+                width: 1400,
+                height: 630,
+            }
+        ]
     }
 }
 

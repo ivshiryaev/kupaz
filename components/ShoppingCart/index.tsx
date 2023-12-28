@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { AiOutlineLoading3Quarters } from "react-icons/ai"
 import { useRouter, usePathname } from 'next/navigation'
 import dynamic from 'next/dynamic'
 

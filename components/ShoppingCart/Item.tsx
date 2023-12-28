@@ -7,11 +7,12 @@ import Link from 'next/link'
 
 import { CiTrash } from "react-icons/ci"
 import { GoPlus } from "react-icons/go";
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineInfo } from "react-icons/ai"
+import { AiOutlineMinus, AiOutlinePlus, AiOutlineInfo, AiOutlineLoading3Quarters } from "react-icons/ai"
 
 import { useShoppingCart } from '@/components/Context/ShoppingCartContext'
 
 import { getSmakById } from '@/lib/actions/smak.actions'
+import { getSmakSlug } from '@/lib/utils'
 
 function Item({id, quantity} : {id: number, quantity: number}) {
 	const [data, setData] = React.useState(null)
@@ -34,6 +35,8 @@ function Item({id, quantity} : {id: number, quantity: number}) {
 
 		getData()
 	},[id])
+
+	const slug = data ? getSmakSlug(data) : null
 
 	let discountAmount = 0
 	let finalPrice = data?.price || 0
@@ -66,7 +69,8 @@ function Item({id, quantity} : {id: number, quantity: number}) {
 
 	if(!data) return (
 		<div className='relative shadow-md p-6 flex flex-col gap-2 bg-white rounded-2xl overflow-hidden'>
-			<div className='relative flex justify-between items-center'>
+			<div className='relative flex gap-2 items-center'>
+				<span className='animate-spin'><AiOutlineLoading3Quarters className='text-[1.25rem]'/></span>
 				<p>Przygotowujemy nalewkę...</p>
 			</div>
 		</div>
@@ -84,7 +88,7 @@ function Item({id, quantity} : {id: number, quantity: number}) {
 			</div>
 			<div className='relative flex justify-between items-center'>
 				<div className='flex flex-col'>
-					<Link onClick={handleLinkClick} href={`/Smak/${data?.title}`} className='text-[1.25rem] hover:underline'>{data?.title}</Link>
+					<Link onClick={handleLinkClick} href={`/smaki/${slug}`} className='text-[1.25rem] hover:underline'>{data?.title}</Link>
 					<p className='text-sm'>Smak: {data?.smak}</p>
 				</div>
 				<button onClick={handleClickTrash} className='active:shadow-inner active:bg-gray-200 hover:bg-gray-100 hover:text-red-500 transition bg-white w-[2.5rem] h-[2.5rem] text-[1.5rem] flex justify-center items-center rounded-full'>

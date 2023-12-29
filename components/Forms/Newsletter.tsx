@@ -14,6 +14,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { FormValidation, NewsletterSchema } from '@/lib/validations/Newsletter'
 
+import { submitNewsletterForm } from '@/lib/actions/formspree.actions'
+
 function Newsletter() {
 	const [isSubmitSuccesfull, setIsSubmitSuccesfull] = useState(false)
 	const [isSubmitting, setIsSubmitting] = useState(false)
@@ -35,19 +37,16 @@ function Newsletter() {
 		setIsSubmitting(true)
 
 		// Timeout for TESTING ->
-		const promise = new Promise((resolve) => {
-			setTimeout(()=>{
-				resolve()
-			},2000)
-		})
+		// const promise = new Promise((resolve) => {
+		// 	setTimeout(()=>{
+		// 		resolve()
+		// 	},2000)
+		// })
 
-		await promise
+		// await promise
 
-		const isSubmitted = true
-		setIsSubmitSuccesfull(true)
-
-		// const isSubmitted = await submitContactForm(data)
-		// setIsSubmitSuccesfull(isSubmitted)
+		const isSubmitted = await submitNewsletterForm(data)
+		setIsSubmitSuccesfull(isSubmitted)
 
 		//If submit successfull reset isSubmitSuccessfull after {timeout}, if no - show alert
 		if(isSubmitted){

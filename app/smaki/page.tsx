@@ -35,7 +35,7 @@ async function Oferta({ searchParams } : { searchParams: { [key: string]: string
 
 	return (
 		<>
-			<h1 className='lg:hidden text-[1.5rem] rounded-2xl bg-white p-6 lg:p-8'>
+			<h1 className='lg:hidden text-[1.5rem] rounded-2xl bg-white p-6 lg:p-8 text-center'>
 				Smaki
 			</h1>
 			<div className='flex justify-center'>

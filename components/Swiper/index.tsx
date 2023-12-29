@@ -18,7 +18,8 @@ const array = ['blbabal','sdsldlf','sdfskdfksdf']
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 type Props = {
-	delay?: number
+	delay?: number,
+	images?: string[]
 }
 
 function SwiperComponent(props: Props) {
@@ -35,22 +36,17 @@ function SwiperComponent(props: Props) {
 				clickable: true,
 			}}
 		>
-			<SwiperSlide>
-				<Image
-					className='object-cover'
-					src='/Images/Photos/1.jpg'
-					alt='image'
-					fill
-				/>
-			</SwiperSlide>
-			<SwiperSlide>
-				<Image
-					className='object-cover'
-					src='/Images/Photos/2.jpg'
-					alt='image'
-					fill
-				/>
-			</SwiperSlide>
+			{props?.images.map((item, idx) => (
+				<SwiperSlide key={idx}>
+					<Image
+						quality={100}
+						className='object-cover'
+						src={item}
+						alt={`Photo: ${idx}`}
+						fill
+					/>
+				</SwiperSlide>
+			))}
 		</Swiper>
 	)
 }

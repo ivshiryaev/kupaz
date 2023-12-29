@@ -1,0 +1,41 @@
+{
+	"title":"Polityka prywatności (RODO)",
+	"list":[
+		{
+			"title":"Informacje ogólne",
+			"content":"Niniejsza Polityka prywatności określa zasady zbierania, przetwarzania i ochrony danych osobowych klientów korzystających z usług sklepu \"Kupaz.pl\", zgodnie z przepisami ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych (Dz. U. 2018 poz. 1000)."
+		},
+		{
+			"title":"Administrator danych",
+			"content":"Administratorem danych osobowych jest sklep internetowy Kupaz.pl"
+		},
+		{
+			"title":"Rodzaje zbieranych danych",
+			"content":"Dane osobowe, które zbieramy, to: Adres e-mail, Numer telefonu, Imię i nazwisko użytkownika, Adres dostawy."
+		},
+		{
+			"title":"Cel zbierania danych",
+			"content":"Podane powyżej dane osobowe są zbierane w celu: Realizacji zamówień, Kontaktu z klientem w przypadku niezbędnych informacji dotyczących zamówienia, Wysyłki informacji marketingowych (jeśli klient wyrazi na to zgodę)."
+		},
+		{
+			"title":"Ochrona danych",
+			"content":"Zapewniamy odpowiednie środki bezpieczeństwa, aby chronić zgromadzone dane osobowe przed nieuprawnionym dostępem, utratą, uszkodzeniem lub nieuprawnionym ujawnieniem."
+		},
+		{
+			"title":"Udostępnianie danych",
+			"content":"Dane osobowe klientów nie są udostępniane osobom trzecim bez ich wyraźnej zgody, chyba że wymaga tego prawo."
+		},
+		{
+			"title":"Prawa klientów",
+			"content":"Klienci mają prawo dostępu do swoich danych, ich poprawiania, usuwania lub ograniczania przetwarzania. Mogą również cofnąć zgodę na przetwarzanie danych w dowolnym momencie."
+		},
+		{
+			"title":"Formularz kontaktowy",
+			"content":"Użytkownik, który jedynie przegląda Stronę zapoznając się z jej treścią nie ma obowiązku ujawniać swojej tożsamości.\nStrona zbiera odpowiednie informacje podane dobrowolnie przez użytkownika w formularzach takie jak: imię, nazwisko, adres e-mail, kod pocztowy, miejscowość, kraj, w celu dokonania procesu, do którego służy dany formularz np. kontaktu z Fundacją.\nW przypadku gdy dane pozwalają na identyfikację osoby fizycznej to dane te są przetwarzane zgodnie z obowiązującą polityką ochrony danych osobowych."
+		},
+		{
+			"title":"Kontakt",
+			"content":"Wszelkie pytania dotyczące Polityki prywatności można kierować na adres e-mail: kupazsklep@gmail.com"
+		}
+	]
+}

@@ -6,6 +6,23 @@ import Link from 'next/link'
 
 import Swiper from '@/components/Swiper'
 
+const mainSwiperImages = [
+	'/Images/Hero/Swiper/1.jpg',
+	'/Images/Hero/Swiper/2.jpg',
+	'/Images/Hero/Swiper/3.jpg',
+	'/Images/Hero/Swiper/4.jpg',
+	'/Images/Hero/Swiper/5.jpg',
+	'/Images/Hero/Swiper/6.jpg',
+]
+
+const leftSmallSwiperImages = [
+	'/Images/Hero/Swiper/1.jpg'
+]
+
+const rightSmallSwiperImages = [
+	'/Images/Hero/Swiper/6.jpg'
+]
+
 function Hero() {
 	return (
 		<section className='
@@ -29,11 +46,11 @@ function Hero() {
 				<div className='relative grid w-full grid-cols-2 gap-2 lg:gap-4 flex-1'>
 					{/*Left*/}
 					<div className='hidden lg:flex flex-1 overflow-hidden bg-white rounded-2xl'>
-						<Swiper delay={4000}/>
+						<Swiper images={leftSmallSwiperImages} delay={4000}/>
 					</div>
 					{/*Right*/}
 					<div className='hidden lg:flex flex-1 overflow-hidden bg-white rounded-2xl'>
-						<Swiper delay={2500}/>
+						<Swiper images={rightSmallSwiperImages} delay={2500}/>
 					</div>
 				</div>
 			</div>
@@ -83,7 +100,7 @@ function Hero() {
 			</div>
 			{/*Right wrapper*/}
 			<div className='hidden lg:flex overflow-hidden relative flex-1 bg-white rounded-2xl'>
-				<Swiper delay={5000}/>
+				<Swiper images={mainSwiperImages} delay={5000}/>
 			</div>
 		</section>
 	)

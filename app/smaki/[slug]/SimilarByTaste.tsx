@@ -15,7 +15,7 @@ async function SimilarByTaste({smak, excludedId} : {smak: string, excludedId: nu
 				p-4 lg:p-6
 				flex flex-col 
 				justify-center items-center
-				lg:items-start 
+				text-center
 				bg-white 
 				rounded-2xl
 			'>

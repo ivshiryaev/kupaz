@@ -12,7 +12,7 @@ function HowTo() {
 			flex flex-col 
 			lg:p-8 lg:gap-4
 		'>
-			<div className='p-6 lg:p-0 border-1 lg:border-0 border-b border-gray-200'>
+			<div className='p-6 lg:p-0 border-1 lg:border-0 border-b border-gray-200 text-center'>
 				<p className='text-[1.5rem]'>Jak zrobić nalewkę ?</p>
 			</div>
 			<ul className='flex flex-col'>

@@ -1,0 +1,33 @@
+{
+	"title":"Regulamin strony",
+	"list":[
+		{
+			"title":"Postanowienia ogólne",
+			"content":"Niniejszy regulamin określa zasady korzystania z usług świadczonych przez Kupaz.pl poprzez stronę internetową https://kupaz.pl.\nKorzystanie z serwisu oznacza akceptację postanowień niniejszego regulaminu."
+		},
+		{
+			"title":"Zamówienia",
+			"content":"Niniejszy regulamin określa zasady korzystania z usług świadczonych przez Kupaz.pl poprzez stronę internetową https://kupaz.pl.\nKorzystanie z serwisu oznacza akceptację postanowień niniejszego regulaminu."
+		},
+		{
+			"title":"Płatności",
+			"content":"Akceptowane formy płatności to Karta / Blik / Apple pay / Google Pay... Wszystkie dostępne metody płatności można znaleść na stronie internetowej pośrednika płatności https://stripe.com"
+		},
+		{
+			"title":"Dostawa",
+			"content":"Koszty dostawy są uzależnione od wybranej formy dostawy i są podane przy składaniu zamówienia.\nCzas dostawy zależy od lokalizacji i dostępności produktów."
+		},
+		{
+			"title":"Zwroty i reklamacje",
+			"content":"Klient ma prawo do zwrotu zakupionego towaru w terminie 14 dni od daty otrzymania zamówienia.\nW przypadku reklamacji prosimy o kontakt na adres kupazsklep@gmail.com"
+		},
+		{
+			"title":"Ochrona danych osobowych",
+			"content":"Dane osobowe są przetwarzane zgodnie z obowiązującymi przepisami i Polityką prywatności.\nKlienci mają prawo dostępu, poprawiania i usuwania swoich danych."
+		},
+		{
+			"title":"Postanowienia końcowe",
+			"content":"Niniejszy regulamin może ulec zmianie. Aktualna wersja regulaminu jest zawsze dostępna na stronie internetowej.\nW sprawach nieuregulowanych w regulaminie mają zastosowanie przepisy prawa polskiego."
+		}
+	]
+}

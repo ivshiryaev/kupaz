@@ -60,7 +60,7 @@ export async function createCheckoutSession(
 		}))
 
 		const session = await stripe.checkout.sessions.create({
-			success_url: 'https://localhost:3000/ClearCartItems',
+			success_url: 'https://kupaz.pl/ClearCartItems',
 			cancel_url: cancel_url,
 			mode: 'payment',
 			line_items,

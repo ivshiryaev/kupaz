@@ -58,6 +58,7 @@ function Hero() {
 			</div>
 			{/*Logo and button wrapper*/}
 			<div className='
+				p-6 lg:p-0
 				relative
 				overflow-hidden
 				min-h-screen lg:h-auto rounded-2xl lg:rounded-none
@@ -73,7 +74,7 @@ function Hero() {
 					fill
 				/>
 				<div className='
-					grow
+					lg:grow
 					relative
 					rounded-2xl 
 					lg:bg-white

@@ -42,6 +42,10 @@ export const metadata: Metadata = {
         canonical: '/'
     },
     openGraph: {
+        url: '/',
+        siteName: 'Kupaz.pl',
+        locale: 'pl_PL',
+        type: 'website',
         images: [
             {
                 url: '/Images/OG/PreviewImage.jpg',
@@ -49,7 +53,7 @@ export const metadata: Metadata = {
                 height: 630,
             }
         ]
-    }
+    },
 }
 
 export default function RootLayout({

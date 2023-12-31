@@ -29,7 +29,7 @@ export async function generateMetadata({params}){
 
 	return {
 		title: `${data.title} - zestaw do samodzielnego przygotowania nalewki`,
-		description: 'Poznaj wszystkie najlepsze polskie nalewki dostępne w naszym sklepie online.',
+		description: `${data.description.slice(0,152)}...`,
 		robots: {
 		    index: true,
 		    googleBot: {
@@ -38,6 +38,9 @@ export async function generateMetadata({params}){
 		},
 		alternates: {
 		    canonical: `https://kupaz.pl/smaki/${slug}`
+		},
+		openGraph: {
+			images: [`/Images/Smaki/${data.title}.jpg`]
 		}
 	}
 }

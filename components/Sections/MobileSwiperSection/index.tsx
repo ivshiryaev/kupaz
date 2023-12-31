@@ -2,19 +2,25 @@ import React from 'react'
 
 import Swiper from '@/components/Swiper'
 
+const images = [
+	'/Images/Hero/Swiper/1.jpg',
+	'/Images/Hero/Swiper/2.jpg',
+	'/Images/Hero/Swiper/3.jpg',
+	'/Images/Hero/Swiper/4.jpg',
+	'/Images/Hero/Swiper/5.jpg',
+	'/Images/Hero/Swiper/6.jpg',
+]
+
 function MobileSwiperSection() {
 	return (
 		<section className='
 			lg:hidden w-full flex gap-2
-			w-full
-			aspect-video
+			relative 
+			h-[500px]
+			overflow-hidden 
+			rounded-2xl
 		'>
-			<div className='relative aspect-square overflow-hidden rounded-2xl'>
-				<Swiper delay={2000}/>
-			</div>
-			<div className='relative aspect-square overflow-hidden rounded-2xl'>
-				<Swiper delay={1000}/>
-			</div>
+			<Swiper images={images} delay={1000}/>
 		</section>
 	)
 }

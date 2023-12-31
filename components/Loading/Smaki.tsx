@@ -21,6 +21,9 @@ function Smaki() {
 				<li>
 					<CardSkeleton/>
 				</li>
+				<li>
+					<CardSkeleton/>
+				</li>
 			</ul>
 		</div>
 	)

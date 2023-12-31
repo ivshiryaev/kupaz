@@ -17,10 +17,10 @@ function MobileSwiperSection() {
 			lg:hidden w-full flex gap-2
 			relative 
 			h-[500px]
-			overflow-hidden 
+			overflow-hidden
 			rounded-2xl
 		'>
-			<Swiper images={images} delay={1000}/>
+			<Swiper images={images} delay={3000}/>
 		</section>
 	)
 }

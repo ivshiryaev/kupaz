@@ -68,7 +68,7 @@ function Item({id, quantity} : {id: number, quantity: number}) {
 	}
 
 	if(!data) return (
-		<div className='relative shadow-md p-6 flex flex-col gap-2 bg-white rounded-2xl overflow-hidden'>
+		<div className='text-gray-400 relative shadow-md p-6 flex flex-col gap-2 bg-white rounded-2xl overflow-hidden'>
 			<div className='relative flex gap-2 items-center'>
 				<span className='animate-spin'><AiOutlineLoading3Quarters className='text-[1.25rem]'/></span>
 				<p>Przygotowujemy nalewkę...</p>

@@ -4,15 +4,17 @@ import TypedText from './TypedText'
 
 import Link from 'next/link'
 
+import { motion } from 'framer-motion'
+
 import Swiper from '@/components/Swiper'
 
+import Slide from '@/components/Animations/Slide'
+
 const mainSwiperImages = [
-	'/Images/Hero/Swiper/1.jpg',
-	'/Images/Hero/Swiper/2.jpg',
 	'/Images/Hero/Swiper/3.jpg',
+	'/Images/Hero/Swiper/2.jpg',
 	'/Images/Hero/Swiper/4.jpg',
 	'/Images/Hero/Swiper/5.jpg',
-	'/Images/Hero/Swiper/6.jpg',
 ]
 
 const leftSmallSwiperImages = [
@@ -58,7 +60,7 @@ function Hero() {
 			<div className='
 				relative
 				overflow-hidden
-				h-screen lg:h-auto rounded-2xl lg:rounded-none
+				min-h-screen lg:h-auto rounded-2xl lg:rounded-none
 				flex-1 flex flex-col gap-4
 				lg:items-stretch
 				items-center justify-center
@@ -71,6 +73,7 @@ function Hero() {
 					fill
 				/>
 				<div className='
+					grow
 					relative
 					rounded-2xl 
 					lg:bg-white

@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation'
 import { MdOutlineMenu, MdClose } from "react-icons/md"
 import { BsInstagram, BsFacebook } from 'react-icons/bs'
 import { GoHome } from "react-icons/go"
-import { PiBeerBottleThin } from "react-icons/pi"
 
 import links from '@/data/navLinks'
 
@@ -73,7 +72,7 @@ function MobileMenu() {
 							</li>
 							{links.map(link => (
 								<li key={link.title}>
-									<Link 
+									<Link
 										onClick={handleLinkClick} 
 										href={`/${link.href}`} 
 										className={`
@@ -83,7 +82,7 @@ function MobileMenu() {
 											rounded-[2rem] 
 										`}
 									>
-										<span className='w-[3rem] h-[3rem] bg-white rounded-full flex justify-center items-center'><PiBeerBottleThin/></span>
+										<span className='w-[3rem] h-[3rem] bg-white rounded-full flex justify-center items-center'>{link.icon}</span>
 										<span>{link.title}</span>
 									</Link>
 								</li>
@@ -99,10 +98,10 @@ function MobileMenu() {
 						</div>
 						<ul className='flex flex-col text-sm'>
 							<li key='PolitykaPrywatnosci' className='p-2 flex justify-center'>
-								<Link href='/PolitykaPrywatnosci'>Polityka Prywatności(RODO)</Link>
+								<Link href='/polityka-prywatnosci'>Polityka Prywatności(RODO)</Link>
 							</li>
 							<li key='RegulaminStrony' className='p-2 flex justify-center'>
-								<Link href='/RegulaminStrony'>Regulamin Strony</Link>
+								<Link href='/regulamin'>Regulamin Strony</Link>
 							</li>
 						</ul>
 					</motion.aside>

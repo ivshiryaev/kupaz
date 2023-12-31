@@ -44,6 +44,18 @@ export default async function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.4
     },
+    {
+      url: `${urlPrefix}/polityka-prywatnosci`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.2
+    },
+    {
+      url: `${urlPrefix}/regulamin`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.1
+    },
     ...smakiUrls,
   ]
 }

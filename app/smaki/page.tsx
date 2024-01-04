@@ -21,11 +21,10 @@ export const metadata: Metadata = {
 async function Oferta({ searchParams } : { searchParams: { [key: string]: string | string[] | undefined }}) {
 	let response
 
-	// If search params has some properties - search with filter
-	if(Object.keys(searchParams).length){
-		response = await getSmakiBySmak({smak: searchParams['smak']})
+	//If there is an 'smak' property in searchParams, return the list of smaki based on this smak
+	if(searchParams?.smak){
+		response = await getSmakiBySmak({smak: searchParams.smak})
 	} else {
-		//If searchParams is empty object - search all the smaki
 		response = await getSmaki()
 	}
 

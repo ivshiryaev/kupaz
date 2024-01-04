@@ -173,7 +173,7 @@ function Newsletter() {
 					</AnimatePresence>
 				</Button>
 			</div>
-			<p className='text-gray-400 text-sm'>Klikając przycisk zgadzasz się z regulaminem sklepu oraz polityką prywatności</p>
+			<p className='text-gray-400 text-sm'>Klikając przycisk zgadzasz się z <Link className='underline' href='/regulamin'>regulaminem sklepu</Link> oraz <Link className='underline' href='/polityka-prywatnosci'>polityką prywatności</Link></p>
 		</form>
 	)
 }

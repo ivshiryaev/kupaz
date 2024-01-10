@@ -11,6 +11,9 @@ import MobileMenu from '@/components/MobileMenu'
 import { ShoppingCartProvider } from '@/components/Context/ShoppingCartContext'
 import ShoppingCart from '@/components/ShoppingCart'
 
+//revalidate the layout every day
+export const revalidate = 86400
+
 const montserrat = Montserrat({ 
   weight: '400',
   subsets: ['latin'],

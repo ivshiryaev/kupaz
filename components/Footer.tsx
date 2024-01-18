@@ -29,7 +29,7 @@ function Footer() {
 				</nav>
 				<div className='flex flex-col'>
 					<p className='text-[0.75rem]'>Kupaz. Wszystkie prawa zastrzeżone</p>
-					<p className='text-[0.625rem]'>Website made by: <Link href='https://ivan-shyriaiev-website.vercel.app/' target='_blank'>theshirya</Link></p>
+					<p className='text-[0.625rem]'>Website made by: <Link href='https://theshirya.xyz/' target='_blank'>theshirya</Link></p>
 				</div>
 			</footer>
 		</Slide>

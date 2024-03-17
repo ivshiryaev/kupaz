@@ -72,13 +72,13 @@ export function ShoppingCartProvider({ children }) {
 
             const data = JSON.parse(response);
 
-            if (data.discountPercentage) {
+            if (data?.discountPercentage) {
                 const discountAmount = data.price * data.discountPercentage / 100;
                 const finalPrice = (data.price - discountAmount).toFixed();
 
                 return accumulator + finalPrice * item.quantity;
             } else {
-                return accumulator + data.price * item.quantity;
+                return accumulator + data?.price * item.quantity;
             }
         }, Promise.resolve(initialValue));
 

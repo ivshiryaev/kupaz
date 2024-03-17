@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
-import Link from 'next/link'
 
 import data from '@/data/constants'
 

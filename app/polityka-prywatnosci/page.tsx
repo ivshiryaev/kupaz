@@ -4,7 +4,7 @@ import data from '@/data/polityka-prywatnosci'
 
 function PolitykaPrywatnosci() {
 	return (
-		<section className='bg-white rounded-2xl p-6 lg:p-8 flex flex-col items-center gap-2 lg:gap-4'>
+		<section className='bg-white rounded-2xl p-6 lg:p-8 flex flex-col items-center gap-2 lg:gap-4 max-w-[768px] mx-auto'>
 			<h1 className='text-[1.5rem] text-center'>{data.title}</h1>
 			<ol className='flex flex-col'>
 				{data.list.map((item,idx) => (

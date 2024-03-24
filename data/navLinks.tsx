@@ -1,6 +1,7 @@
 import { IoMailOutline } from "react-icons/io5"
 import { MdOutlineMenu, MdClose } from "react-icons/md"
 import { PiBeerBottleThin } from "react-icons/pi"
+import { SlBookOpen } from "react-icons/sl";
 
 const links = [
 	{
@@ -9,7 +10,12 @@ const links = [
 		"icon":<PiBeerBottleThin/>
 	},
 	{
-		"title":"Skontaktuj się",
+		"title":"Blog",
+		"href":"blog",
+		"icon":<SlBookOpen/>
+	},
+	{
+		"title":"Kontakt",
 		"href":"contact",
 		"icon":<IoMailOutline/>
 	}

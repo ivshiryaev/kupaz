@@ -21,14 +21,15 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Zestawy do tworzenia własnych nalewek domowych | Sklep internetowy | Kupaz.pl',
+        default: 'Nalewki | Sklep internetowy, cena | Zrób nalewkę sam | Kupaz.pl',
         template: '%s | Kupaz.pl'
     },
-    description: 'Poznaj wszystkie najlepsze polskie nalewki dostępne w naszym sklepie online.',
+    description: 'Nalewki na prezent, zestawy do nalewek, alkohol i nalewki online. Kupaz.pl to sklep internetowy z zestawami do tworzenia nalewek. Sprawdź naszą ofertę!',
     keywords: [
-        'nalewki',
-        'prezenty',
-        'zestawy do nalewek',
+        'nalewki lecznicze',
+        'nalewki na prezent',
+        'zestaw na prezent',
+        'nalewka',
     ],
     creator:'Ivan Shyriaiev',
     publisher:'Ivan Shyriaiev',
@@ -36,11 +37,11 @@ export const metadata: Metadata = {
         index: true,
         googleBot: {
             index: true,
-        }
+        },
     },
     category: 'food and drink',
     other: {
-        secret: 'Uwielbiamy kotów 🐈'
+        secret: 'Czyżby to jakiś programista tu zagląda ? 🤔'
     },
     metadataBase: new URL('https://kupaz.pl'),
     alternates: {

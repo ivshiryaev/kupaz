@@ -98,10 +98,10 @@ function MobileMenu() {
 						</div>
 						<ul className='flex flex-col text-sm'>
 							<li key='PolitykaPrywatnosci' className='p-2 flex justify-center'>
-								<Link href='/polityka-prywatnosci'>Polityka Prywatności(RODO)</Link>
+								<Link onClick={handleLinkClick} href='/polityka-prywatnosci'>Polityka Prywatności(RODO)</Link>
 							</li>
 							<li key='RegulaminStrony' className='p-2 flex justify-center'>
-								<Link href='/regulamin'>Regulamin Strony</Link>
+								<Link onClick={handleLinkClick} href='/regulamin'>Regulamin Strony</Link>
 							</li>
 						</ul>
 					</motion.aside>

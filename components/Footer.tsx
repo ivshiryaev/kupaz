@@ -28,8 +28,8 @@ function Footer() {
 					</ul>
 				</nav>
 				<div className='flex flex-col'>
-					<p className='text-[0.75rem]'>Kupaz. Wszystkie prawa zastrzeżone</p>
-					<p className='text-[0.625rem]'>Website made by: <Link href='https://theshirya.xyz/' target='_blank'>theshirya</Link></p>
+					<p className='text-[0.75rem]'>{new Date().getFullYear()} Kupaz.pl | Zestawy do nalewek | Wszystkie prawa zastrzeżone</p>
+					<p className='text-[0.625rem]'>Website made by: <Link className='hover:underline' href='https://theshirya.xyz/' target='_blank'>theshirya</Link></p>
 				</div>
 			</footer>
 		</Slide>

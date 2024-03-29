@@ -30,3 +30,9 @@ The data from the <select> dropdown is "reactive" to the url params
 - Animations made with framer - motion
 
 - Swiper.js for photos
+
+
+----
+
+29.03.2024 Update:
+Connected Contentfull to manage Blog posts.

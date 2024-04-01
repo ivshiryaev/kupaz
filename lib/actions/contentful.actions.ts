@@ -58,6 +58,7 @@ export async function getBlogEntries(){
     return null
 }
 
+//Get blog entry by slug
 export async function getBlogsBySlug(slug: string){
     const client = await Client()
 
@@ -79,5 +80,38 @@ export async function getBlogsBySlug(slug: string){
     }
 
     //Return null if no entries found
+    return null
+}
+
+
+//Get all entries by type
+export async function getEntriesByType(type: string){
+    const client = await Client()
+
+    try{
+        const entries = await client.getEntries({
+            content_type: type,
+        })
+        return entries
+    } catch (e){
+        console.error((e as Error).message)
+    }
+
+    //Return null if no entries found
+    return null
+}
+
+//Get entry by id
+export async function getEntryById(id: string){
+    const client = await Client()
+
+    try{
+        const entry = await client.getEntry(id)
+        return entry
+    } catch (e){
+        console.error((e as Error).message)
+    }
+
+    //Return null if no entry found
     return null
 }

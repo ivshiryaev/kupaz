@@ -2,8 +2,8 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import Image from 'next/image'
 
 import { getBlogsBySlug } from '@/lib/actions/contentful.actions'
-import { countDateDifference } from '@/lib/utils'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { richtextOptions } from '@/components/Contentful';
 
 export async function generateMetadata({ params } : { params: { slug: string }}, parent: ResolvingMetadata): Promise<Metadata>{
     const response = await getBlogsBySlug(params.slug)
@@ -33,12 +33,15 @@ export default async function Blog({ params } : { params: { slug: string }}) {
         body,
         timeToRead
     } = item.fields
-    const createdAt = item.sys.createdAt
 
-    const bodyContent = documentToReactComponents(body)
+    // Convert createdAt to a DD-MM-YYYY format
+    const createdAt = new Date(item.sys.createdAt).toLocaleDateString('pl-PL', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    })
 
-    //DEBUG 
-    // console.log(item)
+    const bodyContent = documentToReactComponents(body, richtextOptions)
     
 	return (
 		<article className='bg-white flex flex-col gap-8 rounded-2xl p-6 lg:p-8 items-start'>
@@ -52,19 +55,19 @@ export default async function Blog({ params } : { params: { slug: string }}) {
                     />
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <time dateTime={createdAt} className='text-xs'>{countDateDifference(createdAt)}</time>
+                    <time dateTime={createdAt} className='text-xs'>{createdAt}</time>
                     <h1 className='text-xl font-semibold'>{title}</h1>
                     {subtitle && <h2>{subtitle}</h2>}
                     {timeToRead && 
                         <span className='bg-gray-50 px-2 py-1 rounded-2xl w-fit text-xs'>
-                            {timeToRead} {timeToRead > 1 ? 'minuty' : 'minuta'} czytania
+                            {timeToRead} {timeToRead > 1 ? 'minuty' : timeToRead > 4 ? 'minut' : 'minuta'} czytania
                         </span>
                     }
                 </div>
             </div>
-            <h3 className='flex flex-col gap-2'>
+            <div className='flex flex-col'>
                 {bodyContent}
-            </h3>
+            </div>
 		</article>
 	)
 }

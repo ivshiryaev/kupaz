@@ -33,7 +33,7 @@ function Card({
                 {subtitle && <p>{subtitle}</p>}
                 {timeToRead && 
                     <span className='bg-gray-50 px-2 py-1 rounded-2xl w-fit text-xs'>
-                        {timeToRead} {timeToRead > 1 ? 'minuty' : 'minuta'} czytania
+                        {timeToRead} {timeToRead > 4 ? 'minut' : timeToRead > 1 ? 'minuty' : 'minuta'} czytania
                     </span>
                 }
             </div>

@@ -71,7 +71,9 @@ export async function getBlogsBySlug(slug: string){
                 fields.title,
                 fields.subtitle,
                 fields.body,
-                fields.timeToRead
+                fields.timeToRead,
+                fields.metadata,
+                fields.openGraphImage
             `
         })
         return entries

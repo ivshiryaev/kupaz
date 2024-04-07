@@ -25,8 +25,8 @@ export default async function sitemap(): MetadataRoute.Sitemap {
   const blogUrls = blogs.items.map((blog) => ({
       url: `${urlPrefix}/blog/${blog.fields.slug}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.4
+      changeFrequency: 'daily',
+      priority: 0.5
   }))
 
   return[

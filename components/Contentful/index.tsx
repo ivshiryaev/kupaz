@@ -10,18 +10,16 @@ const richtextOptions = {
 	renderNode: {
         [INLINES.HYPERLINK]: (node: any, children: any) => <Link className='text-blue-500 hover:underline' href={node.data.uri}>{children}</Link>,
 		[BLOCKS.HEADING_2]: (node: any, children: any) => <h2 className='text-2xl mb-2 last:mb-0'>{children}</h2>,
-		[BLOCKS.HEADING_3]: (node: any, children: any) => <h3 className='text-xl mb-2 last:mb-0'>{children}</h3>,
+		[BLOCKS.HEADING_3]: (node: any, children: any) => <h3 className='text-xl mb-2 last:mb-0 font-semibold'>{children}</h3>,
         [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
             return(
-                <div className='group relative aspect-video overflow-hidden rounded-lg mb-8 last:mb-0'>
-                    <Image
-                        width={node.data.target.fields.file.details.image.width}
-                        height={node.data.target.fields.file.details.image.height}
-                        src={`https:${node.data.target.fields.file.url}`} 
-                        alt={node.data.target.fields.description} 
-                        className='group-hover:scale-105 group-hover:duration-500 duration-1000 absolute inset-0 w-full h-full object-cover object-center'
-                    />
-                </div>
+                <Image
+                    width={node.data.target.fields.file.details.image.width}
+                    height={node.data.target.fields.file.details.image.height}
+                    src={`https:${node.data.target.fields.file.url}`} 
+                    alt={node.data.target.fields.description} 
+                    className='pointer-events-none overflow-hidden rounded-lg mb-8 last:mb-0'
+                />
             )
         },
         [BLOCKS.HR]: (node: any, children: any) => <hr className='mb-8 last:mb-0' />,

@@ -69,6 +69,7 @@ export async function getBlogsBySlug(slug: string){
             select: `
                 sys.createdAt,
                 fields.title,
+                fields.slug,
                 fields.subtitle,
                 fields.body,
                 fields.timeToRead,

@@ -9,12 +9,19 @@ export const metadata: Metadata = {
         'przepisy na nalewki',
         'nalewki domowe'
     ],
-	category: 'alcohol',
+	category: 'food and drink',
 	alternates: {
 		canonical: '/blog'
 	},
 	openGraph: {
 		url: '/blog',
+		images: [
+            {
+                url: '/Images/OG/PreviewImage.jpg',
+                width: 1400,
+                height: 630,
+            }
+        ]
 	}
 }
 

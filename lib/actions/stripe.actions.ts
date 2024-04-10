@@ -96,6 +96,7 @@ export async function createCheckoutSession(
 			phone_number_collection:{
 				enabled:true,
 			},
+			allow_promotion_codes: true,
 		})
 
 		return JSON.stringify(session)

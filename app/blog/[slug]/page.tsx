@@ -11,6 +11,7 @@ export async function generateMetadata({ params } : { params: { slug: string }},
     const {
         title,
         subtitle,
+        slug,
         body,
         metadata,
         openGraphImage
@@ -22,6 +23,12 @@ export async function generateMetadata({ params } : { params: { slug: string }},
         title: metadata?.title || `${title} | Kupaz.pl`,
         description: metadata?.description || subtitle,
         keywords: metadata?.keywords || [],
+        robots: {
+		    index: true,
+		    googleBot: {
+		        index: true,
+		    }
+		},
         openGraph: {
             title: metadata?.title || title,
             description: metadata?.description || subtitle,
@@ -37,6 +44,9 @@ export async function generateMetadata({ params } : { params: { slug: string }},
             publishedTime: createdAt
         },
         category: metadata?.category || 'food and drink',
+        alternates: {
+		    canonical: `/blog/${slug}`
+		}
     }
 }
 

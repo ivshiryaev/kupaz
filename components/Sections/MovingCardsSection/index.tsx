@@ -46,6 +46,7 @@ const MovingCardsSection = ({ smaki } : { smaki: any[]}) => {
                     const isEven = index % 2 === 0
 
                     if (isEven) {
+                        // eslint-disable-next-line react-hooks/rules-of-hooks
                         evenScrollY = useTransform(scrollY, [0, 100], [0, -100])
                     }
 

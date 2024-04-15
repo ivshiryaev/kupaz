@@ -4,11 +4,22 @@ import mongoose from 'mongoose'
 import { connectToDB } from '@/lib/mongoose'
 import Smak from '@/lib/models/smak.model'
 
-export async function getSmaki(){
+/**
+ * 
+ * @param limit - limite the query 
+ * @returns JSON.stringified response
+ */
+export async function getSmaki(limit = null){
 	try{
 		await connectToDB()
 
-		const response = await Smak.find().sort({ title: 'asc'})
+		let query = Smak.find().sort({ title: 'asc'})
+
+		if (limit !== null) {
+        	query = query.limit(limit);
+        }
+
+		const response = await query.exec();
 
 		return JSON.stringify(response)
 	} catch(error) {

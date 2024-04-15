@@ -4,19 +4,16 @@ import Button from '@/components/Button'
 import Card from '@/components/Card'
 import Link from 'next/link'
 
-import { getSmaki } from '@/lib/actions/smak.actions'
+import Slide from '@/components/Animations/Slide'
 
-async function Bestsellers() {
-	const response = await getSmaki()
-	if(!response) return null
-
-	const data = JSON.parse(response)
-
+async function Bestsellers({smaki} : {smaki: any[]}) {
 	return (
 		<section className='flex flex-col gap-2 lg:gap-4'>
-			<p className='text-[1.5rem] rounded-2xl bg-white p-6 lg:p-8 text-center'>
-				Bestsellery
-			</p>
+			<Slide value={100} verticalDirection='up'>
+				<p className='text-[1.5rem] rounded-2xl bg-white p-6 lg:p-8 text-center'>
+					Bestsellery
+				</p>
+			</Slide>
 			<ul className='
 				grid 
 				grid-flow-row 
@@ -24,7 +21,7 @@ async function Bestsellers() {
 				lg:grid-cols-2
 				gap-2 lg:gap-4
 			'>
-				{data.slice(0,4).map(item => (
+				{smaki.map((item: any) => (
 					<li key={item.id}>
 						<Card id={item.id}/>
 					</li>

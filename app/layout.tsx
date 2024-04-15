@@ -7,6 +7,8 @@ import '@/app/globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MobileMenu from '@/components/MobileMenu'
+import DiscountBanner from '@/components/DiscountBanner'
+import CookieHandler from '@/components/CookieHandler'
 
 import { ShoppingCartProvider } from '@/components/Context/ShoppingCartContext'
 import ShoppingCart from '@/components/ShoppingCart'
@@ -77,6 +79,7 @@ export default function RootLayout({
             <html lang="pl">
                 <body className={`
                     ${montserrat.className}
+                    container mx-auto
                     overflow-x-hidden
                     text-dark
                     bg-gray-100
@@ -90,6 +93,7 @@ export default function RootLayout({
                         <ShoppingCart/>
                         {children}
                         <Footer/>
+                        <DiscountBanner/>
                     </ShoppingCartProvider>
                 </body>
                 <Script src='https://www.googletagmanager.com/gtag/js?id=G-SC9Y4YLDVG'/>

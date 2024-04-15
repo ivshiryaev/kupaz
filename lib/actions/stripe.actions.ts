@@ -4,24 +4,46 @@ import { Stripe } from '@/lib/stripe'
 
 import { getSmakById } from '@/lib/actions/smak.actions'
 
+const firstVisitDiscountPercentage = 10
+
 export async function createCheckoutSession(
 	{
 		items,
-		totalPrice,
 		cancel_url,
-		deliveryPrice
+		firstTimeVisitedCookie,
+		firstTimeVisitedTimestampCookie,
+		userTimeEpochFormat
 	}: 
 	{
 		items: {
 			id: number,
 			quantity: number,
 		}[],
-		totalPrice: number,
 		cancel_url: string,
-		deliveryPrice: number
+		firstTimeVisitedCookie: string,
+		firstTimeVisitedTimestampCookie: string,
+		userTimeEpochFormat: number
 	}){
 	try {
 		const stripe = await Stripe()
+
+		const deliveryPrice = 2000
+
+		const discountOptions = {}
+
+		//If it's user's first visit, and the timedifference less than 10 minutes, minuses 10% from total price
+		if(firstTimeVisitedCookie === "true"){
+			const timeDifference = userTimeEpochFormat - parseInt(firstTimeVisitedTimestampCookie)
+			if(timeDifference < 600000){
+				discountOptions.discounts = [
+					{
+						coupon: process.env.STRIPE_COUPON_FIRST_VISIT_PROMO
+					}
+				]
+			} else {
+				discountOptions.allow_promotion_codes = true
+			}
+		}
 
 		const line_items = await Promise.all(items.map(async(item) => {
 			//Look for such item in db
@@ -81,6 +103,26 @@ export async function createCheckoutSession(
 			],
 			custom_fields: [
 				{
+					key: 'dostawa',
+					label: {
+						custom: 'Metoda dostawy',
+						type: 'custom'
+					},
+					type: 'dropdown',
+					dropdown: {
+						options: [
+							{
+								label: 'InPost Paczkomat',
+								value: 'inpost'
+							},
+							{
+								label: 'Dostawa kurierem (dotyczy Gdańska i okolic)',
+								value: 'kurier'
+							}
+						]
+					}
+				},
+				{
 					key: 'comment',
 					label: {
 						custom: 'Zostaw komentarz do zamówienia',
@@ -88,7 +130,7 @@ export async function createCheckoutSession(
 					},
 					type: 'text',
 					optional: true,
-				}
+				},
 			],
 			payment_method_types:[
 				'blik','card','p24'
@@ -96,11 +138,11 @@ export async function createCheckoutSession(
 			phone_number_collection:{
 				enabled:true,
 			},
-			allow_promotion_codes: true,
+			...discountOptions
 		})
 
 		return JSON.stringify(session)
 	} catch(e) {
-		console.error(e.message)
+		console.error((e as Error).message)
 	}
 }

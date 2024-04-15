@@ -7,19 +7,31 @@ import Contact from '@/components/Sections/Contact'
 import Promotions from '@/components/Sections/Promotions'
 import InfiniteScrollingRow from '@/components/Sections/InfiniteScrollingRow'
 import MobileSwiperSection from '@/components/Sections/MobileSwiperSection'
+import MovingCardsSection from '@/components/Sections/MovingCardsSection'
+import ParallaxOpacityText from '@/components/Sections/ParallaxOpacityText'
 
-export default function Home() {
+import { getSmaki } from '@/lib/actions/smak.actions'
+import { shuffleArray } from '@/lib/utils'
+
+async function Home() {
+    const response = await getSmaki()
+    if (!response) return null
+    const smaki = JSON.parse(response)
+
     return (
         <>
             <Hero/>
-            <About/>
+            <MovingCardsSection smaki={smaki}/>
+            <ParallaxOpacityText/>
+            {/* <About/> */}
             <MobileSwiperSection/>
             <Promotions/>
-            <Bestsellers/>
+            <Bestsellers smaki={shuffleArray(smaki).slice(0, 4)}/>
             <FAQ heading='h3'/>
-            {/*<HowTo/>*/}
             <Contact/>
             <InfiniteScrollingRow/>
         </>
     )
 }
+
+export default Home

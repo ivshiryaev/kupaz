@@ -20,8 +20,11 @@ import { createCheckoutSession } from '@/lib/actions/stripe.actions'
 
 import BottomRightShoppingCartIcon from './BottomRightShoppingCartIcon'
 
+import { getCookie } from '@/lib/utils'
+
 function ShoppingCart() {
 	const router = useRouter()
+	const pathname = usePathname()
 
 	const [isClicked, setIsClicked] = React.useState(false)
 
@@ -48,15 +51,18 @@ function ShoppingCart() {
 	},[isOpen])
 
 	async function handleButtonClick(){
-		setIsClicked(true)
+		const cancel_url = 'https://kupaz.pl'
 
-		const cancel_url = router.asPath
+		const firstTimeVisited = getCookie('firstTimeVisited')
+		const firstTimeVisitedTimestamp = getCookie('firstTimeVisitedTimestamp')
+		const currentTimeEpochFormat = new Date().getTime()
 
 		const response = await createCheckoutSession({
-			items, 
-			totalPrice, 
-			deliveryPrice, 
-			cancel_url
+			items,
+			cancel_url,
+			firstTimeVisitedCookie: firstTimeVisited,
+			firstTimeVisitedTimestampCookie: firstTimeVisitedTimestamp,
+			userTimeEpochFormat: currentTimeEpochFormat
 		})
 		if(!response) {
 			setIsClicked(false)
@@ -86,12 +92,12 @@ function ShoppingCart() {
 							exit={{
 								opacity:0
 							}}
-							className='hidden cursor-pointer bg-[rgba(0,0,0,0.4)] fixed inset-0 z-30 backdrop-blur-md p-4 lg:flex justify-end'
+							className='hidden cursor-pointer bg-[rgba(0,0,0,0.4)] fixed inset-0 z-40 backdrop-blur-md p-4 lg:flex justify-end'
 						>
 						</motion.div>
 						{/*Shopping Cart Wrapper*/}
 						<motion.div 
-							className='fixed z-30 w-full lg:w-2/5 h-full right-0 top-0 lg:p-4'
+							className='fixed z-40 w-full lg:w-2/5 h-full right-0 top-0 lg:p-4'
 							initial={{
 								x:'100%'
 							}}

@@ -29,8 +29,9 @@ function Hero() {
 	return (
 		<section className='
 			flex
-			gap-2 
+			gap-2
 			lg:gap-4
+			max-h-[1280px]
 		'>
 			{/*Left Wrapper*/}
 			<div className='
@@ -58,10 +59,12 @@ function Hero() {
 			</div>
 			{/*Logo and button wrapper*/}
 			<div className='
+				min-h-screen
+				lg:min-h-0
 				p-6 lg:p-0
 				relative
 				overflow-hidden
-				min-h-screen lg:h-auto rounded-2xl lg:rounded-none
+				rounded-2xl lg:rounded-none
 				flex-1 flex flex-col gap-4
 				lg:items-stretch
 				items-center justify-center
@@ -78,7 +81,7 @@ function Hero() {
 					relative
 					rounded-2xl 
 					lg:bg-white
-					lg:p-8
+					lg:p-12
 					flex justify-center items-center
 				'>
 					<Image 

@@ -1,10 +1,29 @@
 'use client'
 
-import React from 'react'
+import { useEffect } from 'react'
 
 import { motion, AnimatePresence } from 'framer-motion'
 
+import { getCookie, setCookie, deleteCookie } from '@/lib/utils';
+
 function RootTemplate({children} : {children: React.ReactNode}) {
+
+	useEffect(() => {
+		const firstTimeVisited = getCookie('firstTimeVisited')
+		const firstTimeVisitedTimestamp = getCookie('firstTimeVisitedTimestamp')
+		
+		if(!firstTimeVisited){
+			setCookie('firstTimeVisited', 'true', 365)
+		}
+
+		if(!firstTimeVisitedTimestamp){
+			// FirstTimeVisitedTimestamp will be saved as a miliseconds date string
+			// example: "1713127890078"
+
+			setCookie('firstTimeVisitedTimestamp', Date.now().toString(), 365)
+		}
+	}, [])
+	
 	return (
 		<AnimatePresence mode='wait'>
 			<motion.main

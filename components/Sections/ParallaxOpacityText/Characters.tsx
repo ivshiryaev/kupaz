@@ -13,13 +13,13 @@ export default function Words({ text } : { text: string }){
     const data = text.split(" ")
     
     return (
-        <p ref={ref} className='flex flex-wrap gap-2 max-w-[768px] leading-none text-2xl items-center justify-center text-center'>
+        <h2 ref={ref} className='flex flex-wrap gap-2 max-w-[768px] leading-none text-2xl items-center justify-center text-center'>
             {data.map((word, idx) => {
                 const start = idx / data.length
                 const end = start + (1 / data.length)
                 return <Word key={idx} range={[start, end]} progress={scrollYProgress}>{word}</Word>
             })}
-        </p>
+        </h2>
     )
 }
 

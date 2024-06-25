@@ -9,6 +9,7 @@ import InfiniteScrollingRow from '@/components/Sections/InfiniteScrollingRow'
 import MobileSwiperSection from '@/components/Sections/MobileSwiperSection'
 import MovingCardsSection from '@/components/Sections/MovingCardsSection'
 import ParallaxOpacityText from '@/components/Sections/ParallaxOpacityText'
+import BubbleText from '@/components/Sections/BubbleText'
 
 import { getSmaki } from '@/lib/actions/smak.actions'
 import { shuffleArray } from '@/lib/utils'
@@ -27,6 +28,7 @@ async function Home() {
             <MobileSwiperSection/>
             <Promotions/>
             <Bestsellers smaki={shuffleArray(smaki).slice(0, 4)}/>
+            <BubbleText />
             <FAQ heading='h3'/>
             <Contact/>
             <InfiniteScrollingRow/>

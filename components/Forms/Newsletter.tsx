@@ -61,7 +61,8 @@ function Newsletter() {
 		setIsSubmitting(false)
 	}
 	return (
-		<form 
+		<motion.form
+			whileInView={{ opacity: 1, translateY: 0 }} initial={{ translateY: 50, opacity: 0 }} viewport={{ once: true }}
 			className='
 				p-6 lg:p-8 
 				bg-white 
@@ -174,7 +175,7 @@ function Newsletter() {
 				</Button>
 			</div>
 			<p className='text-gray-400 text-sm'>Klikając przycisk zgadzasz się z <Link className='underline' href='/regulamin'>regulaminem sklepu</Link> oraz <Link className='underline' href='/polityka-prywatnosci'>polityką prywatności</Link></p>
-		</form>
+		</motion.form>
 	)
 }
 

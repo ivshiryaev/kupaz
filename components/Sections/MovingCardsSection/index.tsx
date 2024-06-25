@@ -16,6 +16,7 @@ const MovingCardsSection = ({ smaki } : { smaki: any[]}) => {
 
     const springScrollY = useSpring(scrollYProgress, { stiffness: 200, damping: 50})
     const scrollY = useTransform(springScrollY, [0, 1], [0, 200])
+    const evenScrollY = useTransform(springScrollY, [0, 1], [0, -200])
 
     return (
         <section 
@@ -42,13 +43,7 @@ const MovingCardsSection = ({ smaki } : { smaki: any[]}) => {
                 '
             >
                 {Array(rows).fill(0).map((item, index) => {
-                    let evenScrollY = scrollY
                     const isEven = index % 2 === 0
-
-                    if (isEven) {
-                        // eslint-disable-next-line react-hooks/rules-of-hooks
-                        evenScrollY = useTransform(scrollY, [0, 100], [0, -100])
-                    }
 
                     return(
                         <motion.div style={{ translateY: isEven ? evenScrollY : scrollY }} key={index} className='relative flex flex-col gap-8 odd:mt-32'>

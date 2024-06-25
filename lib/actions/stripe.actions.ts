@@ -27,8 +27,6 @@ export async function createCheckoutSession(
 	try {
 		const stripe = await Stripe()
 
-		const deliveryPrice = 2000
-
 		const discountOptions = {}
 
 		//If it's user's first visit, and the timedifference less than 10 minutes, minuses 10% from total price
@@ -44,6 +42,9 @@ export async function createCheckoutSession(
 				discountOptions.allow_promotion_codes = true
 			}
 		}
+
+		let deliveryPrice = 2000
+		let totalPrice = 0
 
 		const line_items = await Promise.all(items.map(async(item) => {
 			//Look for such item in db
@@ -68,6 +69,7 @@ export async function createCheckoutSession(
 			}
 
 			finalPrice = finalPrice.toFixed()
+			totalPrice += finalPrice * item.quantity
 
 			return {
 				price_data:{
@@ -80,6 +82,8 @@ export async function createCheckoutSession(
 				quantity: item.quantity
 			}
 		}))
+
+		if(totalPrice > 17000) deliveryPrice = 0
 
 		const session = await stripe.checkout.sessions.create({
 			success_url: 'https://kupaz.pl/ClearCartItems',

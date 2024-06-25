@@ -7,10 +7,12 @@ import Slide from '@/components/Animations/Slide'
 
 export default async function Blog() {
     const entries = await getBlogEntries()
-    const arrayOfEntries = entries.items
+    const arrayOfEntries = entries?.items
 
-    //DEBUG 
-    // console.log(entries)
+    if(!entries) {
+        console.error('No entries found')
+        return
+    }
     
 	return (
 		<>

@@ -109,6 +109,7 @@ export default function RootLayout({
                     gtag('config', 'G-SC9Y4YLDVG');
                   `}
             </Script>
+            <Script src="https://app.termly.io/resource-blocker/009329fd-3d24-4ed5-9f90-fc6ac6c780d0?autoBlock=on"></Script>
         </html>
     )
 }

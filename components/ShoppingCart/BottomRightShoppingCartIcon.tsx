@@ -1,65 +1,71 @@
-'use client'
+"use client"
 
-import { motion, AnimatePresence } from 'framer-motion'
-import React from 'react'
+import { motion, AnimatePresence } from "framer-motion"
+import React from "react"
 
 const distanceInPixels = 100
 
 import { MdOutlineShoppingCart } from "react-icons/md"
-import { useShoppingCart } from '@/components/Context/ShoppingCartContext'
+import { useShoppingCart } from "@/components/Context/ShoppingCartContext"
 
-function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
-	const [scrollY, setScrollY] = React.useState(0)
-	const [isVisible, setIsVisible] = React.useState(false)
+function BottomRightShoppingCartIcon({
+    children,
+}: {
+    children: React.ReactNode
+}) {
+    const [scrollY, setScrollY] = React.useState(0)
+    const [isVisible, setIsVisible] = React.useState(false)
 
-	const {
-		isOpen: isShoppingCartOpen,
-		toggleOpen,
-		totalItemsCount
-	} = useShoppingCart()
+    const {
+        isOpen: isShoppingCartOpen,
+        toggleOpen,
+        totalItemsCount,
+    } = useShoppingCart()
 
-	React.useEffect(()=>{
-		function onScroll(){
-			const newScrollY = window.scrollY
-			setScrollY(newScrollY)
-			setIsVisible(newScrollY > distanceInPixels)
-		}
+    React.useEffect(() => {
+        console.log(totalItemsCount)
 
-		window.addEventListener('scroll', onScroll)
+        function onScroll() {
+            const newScrollY = window.scrollY
+            setScrollY(newScrollY)
+            setIsVisible(newScrollY > distanceInPixels)
+        }
 
-		return () => {
-			window.removeEventListener('scroll', onScroll)
-		}
-	}, [])
+        window.addEventListener("scroll", onScroll)
 
-	return(
-		<>
-		{/*Lg screens*/}
-		<AnimatePresence>
-			{isVisible && totalItemsCount && !isShoppingCartOpen ?
-			<motion.button
-				initial={{
-					opacity: 0,
-					y: 100
-				}}
-				animate={{
-					opacity: 1,
-					y: 0
-				}}
-				exit={{
-					opacity: 0,
-					y: 100
-				}}
-				whileHover={{
-					scale: 1.1,
-					rotate: 5
-				}}
-				whileTap={{
-					scale: 0.9,
-					rotate: -10
-				}}
-				onClick={toggleOpen} 
-				className={`
+        return () => {
+            window.removeEventListener("scroll", onScroll)
+        }
+    }, [])
+
+    return (
+        <>
+            {/*Lg screens*/}
+            <AnimatePresence>
+                {isVisible && totalItemsCount && !isShoppingCartOpen ? (
+                    <motion.button
+                        initial={{
+                            opacity: 0,
+                            y: 100,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                        }}
+                        exit={{
+                            opacity: 0,
+                            y: 100,
+                        }}
+                        whileHover={{
+                            scale: 1.1,
+                            rotate: 5,
+                        }}
+                        whileTap={{
+                            scale: 0.9,
+                            rotate: -10,
+                        }}
+                        onClick={toggleOpen}
+                        className={`
 					hidden
 					z-20 
 					shadow-md 
@@ -71,10 +77,11 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 					lg:flex justify-center items-center 
 					rounded-full
 				`}
-			>
-				<MdOutlineShoppingCart/>
-				{ totalItemsCount ?
-					<span className='
+                    >
+                        <MdOutlineShoppingCart />
+                        {totalItemsCount ? (
+                            <span
+                                className="
 						absolute
 						-right-1 -top-1
 						text-sm
@@ -84,33 +91,33 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 						rounded-full
 						w-6 h-6
 						flex justify-center items-center
-					'>
-						{totalItemsCount}
-					</span>
-				: null }
-			</motion.button>
-			:
-			null
-			}
-		</AnimatePresence>
+					"
+                            >
+                                {totalItemsCount}
+                            </span>
+                        ) : null}
+                    </motion.button>
+                ) : null}
+            </AnimatePresence>
 
-		{/*Mobile screens*/}
-		<AnimatePresence>
-			<motion.button
-				initial={{
-					opacity: 0,
-					y: 100
-				}}
-				animate={{
-					opacity: 1,
-					y: 0
-				}}
-				exit={{
-					opacity: 0,
-					y: 100
-				}}
-				onClick={toggleOpen} 
-				className={`
+            {/*Mobile screens*/}
+            <AnimatePresence>
+                {totalItemsCount && !isShoppingCartOpen ? (
+                    <motion.button
+                        initial={{
+                            opacity: 0,
+                            y: 100,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                        }}
+                        exit={{
+                            opacity: 0,
+                            y: 100,
+                        }}
+                        onClick={toggleOpen}
+                        className={`
 					lg:hidden
 					z-20 
 					shadow-md 
@@ -122,10 +129,11 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 					flex justify-center items-center 
 					rounded-full
 				`}
-			>
-				<MdOutlineShoppingCart/>
-				{ totalItemsCount ?
-					<span className='
+                    >
+                        <MdOutlineShoppingCart />
+                        {totalItemsCount ? (
+                            <span
+                                className="
 						absolute
 						-right-1 -top-1
 						text-sm
@@ -135,14 +143,16 @@ function BottomRightShoppingCartIcon({children} : {children: React.ReactNode}) {
 						rounded-full
 						w-6 h-6
 						flex justify-center items-center
-					'>
-						{totalItemsCount}
-					</span>
-				: null }
-			</motion.button>
-		</AnimatePresence>
-		</>
-	)
+					"
+                            >
+                                {totalItemsCount}
+                            </span>
+                        ) : null}
+                    </motion.button>
+                ) : null}
+            </AnimatePresence>
+        </>
+    )
 }
 
 export default BottomRightShoppingCartIcon

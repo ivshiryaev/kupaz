@@ -16,10 +16,10 @@ function Contact() {
             <ContactForm />
             <div className="flex flex-col gap-2 lg:gap-4 w-full lg:w-1/2">
                 <motion.div
-                    whileInView={{ opacity: 1, translateX: 0 }}
-                    initial={{ translateX: 50, opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-col justify-center items-center lg:items-start gap-4 p-6 lg:p-8 bg-white rounded-2xl grow overflow-x-hidden"
+                    className="flex flex-col justify-center items-center lg:items-start gap-4 p-6 lg:p-8 bg-white rounded-2xl grow overflow-hidden"
                 >
                     <p className="text-[1.5rem]">Przydatne linki</p>
                     <div className="flex gap-4">

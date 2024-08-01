@@ -29,15 +29,9 @@ const DiscountBanner = () => {
             console.error(`Can't handle discount notification/popup logic, one ore both of these cookies aren't found ${firstTimeVisited}, ${firstTimeVisitedTimestamp}`)
         }
 
-        console.log(firstTimeVisited)
-        console.log(firstTimeVisitedTimestamp)
-
         const currentTime = Date.now()
         const timeDifferenceInMs = currentTime - parseInt(firstTimeVisitedTimestamp as string)
         const timeDifferenceInSeconds = Math.floor((timeDifferenceInMs as number) / 1000)
-
-        console.log(timeDifferenceInMs)
-        console.log(timeDifferenceInSeconds)
 
         // if the timeDifference is greater than 10 minutes, return
         if(timeDifferenceInSeconds > 600){

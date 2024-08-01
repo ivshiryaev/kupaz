@@ -47,14 +47,6 @@ function Footer() {
                                 </Link>
                             </li>
                         ))}
-                        <li>
-                            <Link
-                                href="#"
-                                className="termly-display-preferences text-sm hover:text-dark"
-                            >
-                                Consent Preferences
-                            </Link>
-                        </li>
                     </ul>
                 </nav>
                 {/* Rights */}

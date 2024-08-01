@@ -4,6 +4,9 @@ import { richtextOptions } from '@/components/Contentful';
 
 export default async function Regulamin() {
 	const response = await getEntryById(process.env.CONTENTFUL_REGULAMIN_ID as string)
+
+	if(!response) return null
+
 	const { title } = response.fields
 	const description = documentToReactComponents(response.fields.description, richtextOptions)
 

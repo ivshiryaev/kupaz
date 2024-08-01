@@ -11,13 +11,15 @@ function Delivery({ price }: { price: number }) {
     const formattedPrice = (price / 100).toFixed(2)
     return (
         <article
-            className="
-			relative 
-			shadow-md 
-			p-6 
-			flex flex-col 
-			bg-white rounded-2xl
-		"
+            className={`
+                relative 
+                shadow-md 
+                p-6 
+                flex flex-col 
+                rounded-2xl
+
+                ${price > 0 ? 'bg-white' : 'bg-green-50'}
+            `}
         >
             <div className="absolute inset-0 flex justify-center items-center w-full h-full">
                 <motion.span
@@ -79,7 +81,7 @@ function Delivery({ price }: { price: number }) {
                     <p className="text-sm text-gray-400 whitespace-pre-wrap">
                         Darmowa dostawa przy
                         <br />
-                        zamówieniu od 150 zł
+                        zamówieniu od 170 zł
                     </p>
                     <p className="text-[1.25rem]">{formattedPrice} zł</p>
                 </div>

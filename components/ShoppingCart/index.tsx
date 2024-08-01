@@ -11,6 +11,7 @@ import Button from "@/components/Button"
 
 import Delivery from "./Delivery"
 import Item from "./Item"
+import FreeItem from "./FreeItem"
 
 import { MdOutlineShoppingCart, MdClose } from "react-icons/md"
 
@@ -76,6 +77,10 @@ function ShoppingCart() {
 
         router.push(data.url)
         setIsClicked(false)
+    }
+
+    function calculateFreeItems(totalItemsCount: number): number {
+        return Math.floor(totalItemsCount / 5)
     }
 
     return (
@@ -172,6 +177,32 @@ function ShoppingCart() {
                                                             />
                                                         </motion.li>
                                                     ))}
+                                                    {totalItemsCount > 5 ? (
+                                                        <motion.li
+                                                            key="darmowa"
+                                                            initial={{
+                                                                translateY: 50,
+                                                                opacity: 0
+                                                            }}
+                                                            animate={{
+                                                                translateY: 0,
+                                                                opacity: 1
+                                                            }}
+                                                            exit={{
+                                                                translateY: 50,
+                                                                opacity: 0
+                                                            }}
+                                                            transition={{
+                                                                ease: "easeInOut"
+                                                            }}
+                                                        >
+                                                            <FreeItem
+                                                                quantity={calculateFreeItems(
+                                                                    totalItemsCount
+                                                                )}
+                                                            />
+                                                        </motion.li>
+                                                    ) : null}
                                                 </AnimatePresence>
                                             </ul>
                                             {/*Bottom*/}

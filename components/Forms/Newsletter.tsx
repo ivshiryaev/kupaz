@@ -62,13 +62,14 @@ function Newsletter() {
 	}
 	return (
 		<motion.form
-			whileInView={{ opacity: 1, translateY: 0 }} initial={{ translateY: 50, opacity: 0 }} viewport={{ once: true }}
+			whileInView={{ opacity: 1 }} initial={{ opacity: 0 }} viewport={{ once: true }}
 			className='
 				p-6 lg:p-8 
 				bg-white 
 				rounded-2xl
 				flex flex-col gap-4
 				text-center lg:text-left
+				overflow-y-hidden
 			'
 			onSubmit={handleSubmit(processSubmit)}
 		>

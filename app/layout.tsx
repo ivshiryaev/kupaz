@@ -8,7 +8,6 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import MobileMenu from "@/components/MobileMenu"
 import DiscountBanner from "@/components/DiscountBanner"
-import CookieHandler from "@/components/CookieHandler"
 
 import { ShoppingCartProvider } from "@/components/Context/ShoppingCartContext"
 import ShoppingCart from "@/components/ShoppingCart"
@@ -24,16 +23,17 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
     title: {
         default:
-            "Nalewki | Sklep internetowy, cena | Zrób nalewkę sam | Kupaz.pl",
+            "Zestawy do robienia nalewek na prezent | Kupaz.pl",
         template: "%s | Kupaz.pl",
     },
     description:
-        "Nalewki na prezent, zestawy do nalewek, alkohol i nalewki online. Kupaz.pl to sklep internetowy z zestawami do tworzenia nalewek. Sprawdź naszą ofertę!",
+        "DIY - zestawy do robienia nalewek. Kupaż - to sklep internetowy z zestawami do tworzenia nalewek. Sprawdź naszą ofertę!",
     keywords: [
-        "nalewki lecznicze",
+        "kupaz",
         "nalewki na prezent",
-        "zestaw na prezent",
+        "zestaw do robienia nalewek",
         "nalewka",
+        "kupaż",
     ],
     creator: "Ivan Shyriaiev",
     publisher: "Ivan Shyriaiev",
@@ -109,7 +109,6 @@ export default function RootLayout({
                     gtag('config', 'G-SC9Y4YLDVG');
                   `}
             </Script>
-            <Script src="https://app.termly.io/resource-blocker/009329fd-3d24-4ed5-9f90-fc6ac6c780d0?autoBlock=on"></Script>
         </html>
     )
 }

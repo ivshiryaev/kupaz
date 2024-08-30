@@ -1,4 +1,4 @@
-https://kupaz.pl
+https://kupaz.xyz
 
 Website for Polish e-commerce specialized in tincture making kits.
 

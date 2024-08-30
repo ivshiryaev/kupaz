@@ -177,7 +177,7 @@ function ShoppingCart() {
                                                             />
                                                         </motion.li>
                                                     ))}
-                                                    {totalItemsCount > 5 ? (
+                                                    {totalItemsCount >= 5 ? (
                                                         <motion.li
                                                             key="darmowa"
                                                             initial={{

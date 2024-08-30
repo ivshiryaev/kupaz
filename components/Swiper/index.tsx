@@ -29,12 +29,13 @@ function SwiperComponent(props: Props) {
 			navigation={true}
         	modules={[Autoplay, Pagination, Navigation]}
         	autoplay={{
-				delay: props.delay || 2500,
+				delay: props.delay || 5000,
 				disableOnInteraction: false,
 			}}
 			pagination={{
 				clickable: true,
 			}}
+			loop={true}
 		>
 			{props?.images.map((item, idx) => (
 				<SwiperSlide key={idx}>

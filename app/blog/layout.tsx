@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 function BlogLayout({ children } : { children: React.ReactNode }) {
 	return (
-		<div className='w-full flex justify-center'>
+		<div className='w-full flex justify-center gap-4 relative'>
 			<div className='max-w-[768px]'>{children}</div>
 		</div>
 	)

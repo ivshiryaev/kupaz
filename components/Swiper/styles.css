@@ -4,4 +4,5 @@
 
 .swiper{
 	--swiper-theme-color: dark;
+	--swiper-pagination-color: #222;
 }

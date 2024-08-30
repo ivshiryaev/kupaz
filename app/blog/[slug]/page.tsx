@@ -70,9 +70,9 @@ export default async function Blog({ params } : { params: { slug: string }}) {
     const bodyContent = documentToReactComponents(body, richtextOptions)
     
 	return (
-		<article className='bg-white flex flex-col gap-8 rounded-2xl p-6 lg:p-8 items-start'>
-            <div className='flex gap-2'>
-                <div className='hidden lg:flex rounded-full w-[64px] h-[64px] justify-center items-center border border-gray-50 border-1 relative overflow-hidden'>
+		<article className='bg-white flex flex-col gap-8 rounded-2xl p-6 lg:p-10 items-start'>
+            <div className='flex gap-4'>
+                <div className='hidden shrink-0 lg:flex rounded-full w-[64px] h-[64px] justify-center items-center border border-gray-50 border-1 relative overflow-hidden'>
                     <Image
                         className='absolute pointer-events-none'
                         src='/logo32x34.png'

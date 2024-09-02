@@ -55,7 +55,9 @@ function ShoppingCart() {
     }, [isOpen])
 
     async function handleButtonClick() {
-        const cancel_url = "https://kupaz.pl"
+        const cancel_url = window.location.href
+        console.log(cancel_url)
+
 
         const firstTimeVisited = getCookie("firstTimeVisited")
         const firstTimeVisitedTimestamp = getCookie("firstTimeVisitedTimestamp")

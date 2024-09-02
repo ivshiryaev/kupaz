@@ -13,7 +13,7 @@ export default async function sitemap(): MetadataRoute.Sitemap {
   const blogs = await getBlogEntries()
   if(!blogs) return null
 
-  let urlPrefix = 'https://kupaz.pl';
+  let urlPrefix = 'https://kupaz.xyz';
 
   const smakiUrls = smaki.map((smak) => ({
     url: `${urlPrefix}/smaki/${getSmakSlug(smak)}`, // https://example.com/Oferta/this-is-a-post-1

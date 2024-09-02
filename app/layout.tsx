@@ -23,8 +23,8 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
     title: {
         default:
-            "Zestawy do robienia nalewek na prezent | Kupaz.pl",
-        template: "%s | Kupaz.pl",
+            "Zestawy do robienia nalewek na prezent | Kupaz.xyz",
+        template: "%s | Kupaz.xyz",
     },
     description:
         "DIY - zestawy do robienia nalewek. Kupaż - to sklep internetowy z zestawami do tworzenia nalewek. Sprawdź naszą ofertę!",
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     other: {
         secret: "Czyżby to jakiś programista tu zagląda ? 🤔",
     },
-    metadataBase: new URL("https://kupaz.pl"),
+    metadataBase: new URL("https://kupaz.xyz"),
     alternates: {
         canonical: "/",
     },
     openGraph: {
         url: "/",
-        siteName: "Kupaz.pl",
+        siteName: "Kupaz.xyz",
         locale: "pl_PL",
         type: "website",
         images: [

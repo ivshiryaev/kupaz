@@ -20,7 +20,7 @@ export async function generateMetadata({ params } : { params: { slug: string }},
     const createdAt = item.sys.createdAt
 
     return {
-        title: metadata?.title || `${title} | Kupaz.pl`,
+        title: metadata?.title || `${title} | Kupaz.xyz`,
         description: metadata?.description || subtitle,
         keywords: metadata?.keywords || [],
         robots: {

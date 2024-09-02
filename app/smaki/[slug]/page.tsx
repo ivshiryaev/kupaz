@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
             },
         },
         alternates: {
-            canonical: `https://kupaz.pl/smaki/${slug}`,
+            canonical: `https://kupaz.xyz/smaki/${slug}`,
         },
         openGraph: {
             title: `Zestaw do robienia nalewki o smaku - "${data.title}"`,

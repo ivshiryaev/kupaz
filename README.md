@@ -22,7 +22,7 @@ Essentially, a new checkout.session created each time when a client clicks 'Pay'
 (Thanks to the https://mikebifulco.com/posts/self-healing-urls-nextjs-seo)
 
 If you write the wrong url - it is not a problem:
-Wrong url example: https://kupaz.pl/smaki/irisXh-2 - it will redirect you to the https://kupaz.pl/smaki/irish-2
+Wrong url example: https://kupaz.xyz/smaki/irisXh-2 - it will redirect you to the https://kupaz.xyz/smaki/irish-2
 
 - Filtering functionality for products
 The data from the <select> dropdown is "reactive" to the url params

@@ -86,7 +86,7 @@ export async function createCheckoutSession(
 		if(totalPrice > 17000) deliveryPrice = 0
 
 		const session = await stripe.checkout.sessions.create({
-			success_url: 'https://kupaz.pl/ClearCartItems',
+			success_url: 'https://kupaz.xyz/ClearCartItems',
 			cancel_url: cancel_url,
 			mode: 'payment',
 			line_items,

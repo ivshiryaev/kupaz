@@ -52,7 +52,7 @@ function Footer() {
                 {/* Rights */}
                 <div className="flex flex-col">
                     <p className="text-[0.75rem]">
-                        {new Date().getFullYear()} Kupaz.pl | Zestawy do nalewek
+                        {new Date().getFullYear()} Kupaz.xyz | Zestawy do nalewek
                         | Wszystkie prawa zastrzeżone
                     </p>
                     <p className="text-[0.625rem]">

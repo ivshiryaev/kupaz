@@ -112,7 +112,7 @@ function Hero() {
                     </h1>
                     <Link href="/smaki" className="lg:w-full">
                         <Button appearance="fill" className="lg:w-full">
-                            Zobacz nasze smaki
+                            Kup na prezent
                         </Button>
                     </Link>
                 </div>
